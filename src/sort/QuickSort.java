@@ -14,12 +14,13 @@ import util.Util;
 public class QuickSort {
 	private static int i;
 	private static int j;
+        private static double [] v;
 
-	public static void sort(int[] v) {
+	public static void sort(double[] v) {
 		quickSort(v, 0, v.length - 1);
 	}
 
-	private static void quickSort(int[] v, int low, int high) {
+	private static void quickSort(double[] v, int low, int high) {
 		partition(v, low, high);
 		if (low < j)
 			quickSort(v, low, j);
@@ -27,10 +28,11 @@ public class QuickSort {
 			quickSort(v, i, high);
 	}
 
-	private static void partition(int[] v, int low, int high) {
-		i = low;
-		j = high;
-		int x = v[(i + j) / 2];
+	private static void partition(double[] v, int low, int high) {
+		 i = low;
+		 j = high;
+                 double x;
+		 x = v[(i + j) / 2];
 		while (i <= j) {
 			while (v[i] < x)
 				i++;

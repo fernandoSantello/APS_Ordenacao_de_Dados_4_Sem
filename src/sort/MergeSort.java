@@ -11,11 +11,11 @@ package sort;
  */
 public class MergeSort {
 
-	public static void sort(int[] v) {
+	public static void sort(double[] v) {
 		mergeSort(v, 0, v.length - 1);
 	}
 
-	private static void mergeSort(int[] v, int low, int high) {
+	private static void mergeSort(double[] v, int low, int high) {
 		if (low < high) {
 			int middle = (low + high) / 2;
 			mergeSort(v, low, middle);
@@ -24,8 +24,8 @@ public class MergeSort {
 		}
 	}
 
-	private static void merge(int[] v, int low, int middle, int high) {
-		int[] vAux = new int[v.length];
+	private static void merge(double[] v, int low, int middle, int high) {
+		double[] vAux = new double[v.length];
 		for (int i = low; i <= high; i++) {
 			vAux[i] = v[i];
 		}
