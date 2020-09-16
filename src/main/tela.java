@@ -321,38 +321,38 @@ public class tela extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        SET=generateNumberArray (1,-1,2);
+        SET=generateNumberArray (1,-1,2,-3,4);
         jLabel3.setText("Novo: "+Arrays.toString(SET));
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        SET=generateNumberArray (2,-1,2);
+        SET=generateNumberArray (2,-1,2,-3,4);
         jLabel3.setText("Novo: "+Arrays.toString(SET));
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        SET=generateNumberArray (3,-1,2);
+        SET=generateNumberArray (3,-1,2,-3,4);
         jLabel3.setText("Novo: "+Arrays.toString(SET));
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        SET=generateNumberArray (4,-1,2);
+        SET=generateNumberArray (4,-1,2,-3,4);
         jLabel3.setText("Novo: "+Arrays.toString(SET));
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        SET=generateNumberArray (5,-1,2);
+        SET=generateNumberArray (5,-1,2,-3,4);
         jLabel3.setText("Novo: "+Arrays.toString(SET));
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        SET=generateNumberArray (6,-1,2);
+        SET=generateNumberArray (6,-1,2,-3,4);
         jLabel3.setText("Novo: "+Arrays.toString(SET));
     }//GEN-LAST:event_jButton13ActionPerformed
     
-    public static double[] generateNumberArray(int size, double max, double min) {
+    public static double[] generateNumberArray(int size, double minX, double maxX, double minY, double maxY) {
         RandomNumberGenerator rng = new RandomNumberGenerator();
-        return rng.genRandomNumberArray(size, min, max);
+        return rng.genRandomNumberArray(size, minX, maxX, minY, maxY);
     }
     
     /**
