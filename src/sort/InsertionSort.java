@@ -10,9 +10,9 @@ package sort;
  * @author ferna
  */
 public class InsertionSort {
-	public static void sort(double[] v) {
+	public static void sort(long[] v) {
 		int i, j, n = v.length;
-                double temp;
+                long temp;
 		for (i = 1; i < n; i++) {
 			temp = v[i];
 			j = i - 1;

@@ -12,7 +12,7 @@ package sort;
 import util.Util;
 
 public class HeapSort {
-	public static void sort(double[] v) {
+	public static void sort(long[] v) {
 		int n = v.length, i;
 		int low = n / 2 - 1, high = n - 1;
 		// Build initial heap
@@ -25,11 +25,11 @@ public class HeapSort {
 		}
 	}
 
-	private static void heapify(double[] v, int pos, int n) {
+	private static void heapify(long[] v, int pos, int n) {
 		int low = 2 * pos + 1;
 		int high = 2 * pos + 2;
 		int largest;
-                double temp;
+                long temp;
 		if (low < n && v[low] > v[pos])
 			largest = low;
 		else

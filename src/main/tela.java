@@ -14,11 +14,10 @@ import javax.swing.DefaultListModel;
  *
  * @author ferna
  */
+
 public class tela extends javax.swing.JFrame {
         DefaultListModel listModel;
-        private static double[] SET = { 54, 2, 98, 4, 98, 3, 23, 43, 65, 56, 12, 76,
-			71, 21, 21, 48, 2, 8, 10, 90, 60, 50, 95, 13, 82, 59, 20, 37, 52,
-			68, 18, 19, 66, 31 };
+        private static long[] SET = {  };
 //        private static int[] SETA = { 54, 2, 98, 4, 98, 3, 23, 43, 65, 56, 12, 76,
 //			71, 21, 21, 48, 2, 8, 10, 90, 60, 50, 95, 13, 82, 59, 20, 37, 52,
 //			68, 18, 19, 66, 31 };
@@ -321,36 +320,36 @@ public class tela extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        SET=generateNumberArray (1,-1,2,-3,4);
+        SET=generateNumberArray (1,0.530407,-9.309178,-69.607934,-46.202623);
         jLabel3.setText("Novo: "+Arrays.toString(SET));
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        SET=generateNumberArray (2,-1,2,-3,4);
+        SET=generateNumberArray (2,0.530407,-9.309178,-69.607934,-46.202623);
         jLabel3.setText("Novo: "+Arrays.toString(SET));
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        SET=generateNumberArray (3,-1,2,-3,4);
+        SET=generateNumberArray (3,0.530407,-9.309178,-69.607934,-46.202623);
         jLabel3.setText("Novo: "+Arrays.toString(SET));
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        SET=generateNumberArray (4,-1,2,-3,4);
+        SET=generateNumberArray (4,0.530407,-9.309178,-69.607934,-46.202623);
         jLabel3.setText("Novo: "+Arrays.toString(SET));
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        SET=generateNumberArray (5,-1,2,-3,4);
+        SET=generateNumberArray (5,0.530407,-9.309178,-69.607934,-46.202623);
         jLabel3.setText("Novo: "+Arrays.toString(SET));
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        SET=generateNumberArray (6,-1,2,-3,4);
+        SET=generateNumberArray (6,0.530407,-9.309178,-69.607934,-46.202623);
         jLabel3.setText("Novo: "+Arrays.toString(SET));
     }//GEN-LAST:event_jButton13ActionPerformed
     
-    public static double[] generateNumberArray(int size, double minX, double maxX, double minY, double maxY) {
+    public static long[] generateNumberArray(int size, double minX, double maxX, double minY, double maxY) {
         RandomNumberGenerator rng = new RandomNumberGenerator();
         return rng.genRandomNumberArray(size, minX, maxX, minY, maxY);
     }

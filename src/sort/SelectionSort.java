@@ -12,7 +12,7 @@ package sort;
 import util.Util;
 
 public class SelectionSort {
-	public static void sort(double[] v) {
+	public static void sort(long[] v) {
 		int i, j, min, n = v.length;
 		for (i = 0; i < n; i++) {
 			min = i;

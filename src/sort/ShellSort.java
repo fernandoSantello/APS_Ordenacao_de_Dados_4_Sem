@@ -10,11 +10,11 @@ package sort;
  * @author ferna
  */
 public class ShellSort {
-	public static void sort(double[] v) {
+	public static void sort(long[] v) {
 		int n = v.length;
 		int range = n / 2;
 		int i, j ;
-                double temp;
+                long temp;
 		int gap;
 		while (range > 0) {
 			for (i = range; i < n; i++) {

@@ -11,13 +11,13 @@ package util;
  */
 public class Util {
 
-	public static void swap(double[] v, int i, int j) {
-		double temp = v[i];
+	public static void swap(long[] v, int i, int j) {
+		long temp = v[i];
 		v[i] = v[j];
 		v[j] = temp;
 	}
 
-	public static void echo(double[] v) {
+	public static void echo(long[] v) {
 		System.out.print("{");
 		for (double i : v) {
 			System.out.print(" " + i + " ");
