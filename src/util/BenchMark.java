@@ -22,7 +22,7 @@ public class BenchMark {
     }
     
     public double setElapsed() {
-        this.elapsed = ((double)System.nanoTime() - this.start) / 1000000;
+        this.elapsed = ((double)System.nanoTime() - this.start) / 100000;
         return elapsed;
     }
     
