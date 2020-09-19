@@ -5,6 +5,7 @@ import java.text.DecimalFormat;
 import java.util.Random;
 
 public class RandomNumberGenerator {
+    String st;
     
     public double MathX(double number) {
         double cut = Math.round(number * 1000000.0) / 1000000.0;
@@ -55,17 +56,24 @@ Random rand = new Random();
         long  [] arr = new long [size];
 //TEM QUE COLOCAR O FOR PRA SINAL E CONCATENAR
         for (int i = 0; i < arr.length; i++) {
-            double x,y,xt; 
-            String a="1", b="2";
+            double x,y; 
+            String a="1", b="2",xt;
             String x1,y1;
             BigInteger ref;
+            st="";
+            while (st.length()<17){
                 
             x=genRandomNumberX(minX, maxX);
           //  xt=x;
             //DecimalFormat xe = new DecimalFormat("#.00");
             
             x = MathX(x);
-            
+            xt = String.valueOf(x);
+            while (xt.contains("E")){
+                x=genRandomNumberX(minX, maxX);
+                x=MathX(x);
+                xt=String.valueOf(x);
+            }
             if (x>0){
                  x1 = String.valueOf(String.valueOf(a) +String.valueOf(x));
             }else{
@@ -79,7 +87,7 @@ Random rand = new Random();
                  y1 = String.valueOf(String.valueOf(b) +String.valueOf(y));
             }
             
-            String st=String.valueOf(String.valueOf(x1) + String.valueOf(y1));
+            st=String.valueOf(String.valueOf(x1) + String.valueOf(y1));
             
             st = st.replace(".", "");
             st = st.replace("-", "");
@@ -90,6 +98,7 @@ Random rand = new Random();
             System.out.println("x1: "+x1);
             System.out.println("y1: "+y1);
             System.out.println("st concatenado: "+st);
+            }
             
            long res = Long.valueOf(st);
            
@@ -103,7 +112,7 @@ Random rand = new Random();
         
           arr[i] = res;
           System.out.println("Long: "+res);
-          System.out.println("Long: "+x);
+          
       
 //        System.out.println(x);
 //        System.out.println(y);

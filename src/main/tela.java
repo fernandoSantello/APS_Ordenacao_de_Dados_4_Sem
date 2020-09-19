@@ -4,11 +4,22 @@
  * and open the template in the editor.
  */
 package main;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import util.*;
 import sort.*;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.JFileChooser;
 
 
 /**
@@ -20,6 +31,9 @@ public class tela extends javax.swing.JFrame {
         DefaultListModel listModel;
         private static long[] SET = {  };
          String logaux="", logcontent="";
+         long w,g;
+         ArrayList<Long> s = new ArrayList<Long>();
+         
 //        private static int[] SETA = { 54, 2, 98, 4, 98, 3, 23, 43, 65, 56, 12, 76,
 //			71, 21, 21, 48, 2, 8, 10, 90, 60, 50, 95, 13, 82, 59, 20, 37, 52,
 //			68, 18, 19, 66, 31 };
@@ -62,6 +76,12 @@ public class tela extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -114,42 +134,42 @@ public class tela extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setText("Gerar 1 Random");
+        jButton8.setText("Gerar 10 Random");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
             }
         });
 
-        jButton9.setText("Gerar 2 Random");
+        jButton9.setText("Gerar 100 Random");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
             }
         });
 
-        jButton10.setText("Gerar 3 Random");
+        jButton10.setText("Gerar 1.000 Random");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
             }
         });
 
-        jButton11.setText("Gerar 4 Random");
+        jButton11.setText("Gerar 10.000 Random");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton11ActionPerformed(evt);
             }
         });
 
-        jButton12.setText("Gerar 5 Random");
+        jButton12.setText("Gerar 100.000 Random");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton12ActionPerformed(evt);
             }
         });
 
-        jButton13.setText("Gerar 6 Random");
+        jButton13.setText("Gerar 1.00.000 Random");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton13ActionPerformed(evt);
@@ -177,6 +197,43 @@ public class tela extends javax.swing.JFrame {
 
         jLabel1.setText("LOG:");
 
+        jMenu1.setText("Importar");
+
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem3.setText("Importar desorganizado");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Exportar");
+
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem1.setText("Exportar organizado");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
+
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem2.setText("Exportar log");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -186,7 +243,7 @@ public class tela extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addContainerGap(14, Short.MAX_VALUE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -300,6 +357,7 @@ public class tela extends javax.swing.JFrame {
     
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
         BenchMark bmm = new BenchMark();
         bmm.reset();
         //jLabel3.setText("Antes: "+Arrays.toString(SET));
@@ -385,40 +443,73 @@ public class tela extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        SET=generateNumberArray (1,0.530407,-9.309178,-69.607934,-46.202623);
+        SET=generateNumberArray (10,-1.074055,-9.309178,-69.607934,-46.202623);
         //jLabel3.setText("Novo: "+Arrays.toString(SET));
         Order();
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        SET=generateNumberArray (2,0.530407,-9.309178,-69.607934,-46.202623);
+        SET=generateNumberArray (100,-1.074055,-9.309178,-69.607934,-46.202623);
         //jLabel3.setText("Novo: "+Arrays.toString(SET));
         Order();
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        SET=generateNumberArray (3,0.530407,-9.309178,-69.607934,-46.202623);
+        SET=generateNumberArray (1000,-1.074055,-9.309178,-69.607934,-46.202623);
         //jLabel3.setText("Novo: "+Arrays.toString(SET));
         Order();
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        SET=generateNumberArray (4,0.530407,-9.309178,-69.607934,-46.202623);
+        SET=generateNumberArray (10000,-1.074055,-9.309178,-69.607934,-46.202623);
         //jLabel3.setText("Novo: "+Arrays.toString(SET));
         Order();
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        SET=generateNumberArray (5,0.530407,-9.309178,-69.607934,-46.202623);
+        SET=generateNumberArray (100000,-1.074055,-9.309178,-69.607934,-46.202623);
         //jLabel3.setText("Novo: "+Arrays.toString(SET));
         Order();
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        SET=generateNumberArray (6,0.530407,-9.309178,-69.607934,-46.202623);
+        SET=generateNumberArray (500000,-1.074055,-9.309178,-69.607934,-46.202623);
+//       System.out.println(getMaxValue(SET));
+//       System.out.println(getMinValue(SET));
         //jLabel3.setText("Novo: "+Arrays.toString(SET));
         Order();
     }//GEN-LAST:event_jButton13ActionPerformed
+
+    public static long getMaxValue(long[] numbers){
+  long maxValue = numbers[0];
+  for(int i=1;i < numbers.length;i++){
+    if(numbers[i] > maxValue){
+      maxValue = numbers[i];
+    }
+  }
+  return maxValue;
+}
+public static long getMinValue(long[] numbers){
+  long minValue = numbers[0];
+  for(int i=1;i<numbers.length;i++){
+    if(numbers[i] < minValue){
+      minValue = numbers[i];
+    }
+  }
+  return minValue;
+}
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        exportData(jTextArea2.getText());
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        exportData(jTextArea3.getText());
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        SET=generateNumberArray (0,0,0,0,0);
+        importData();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
     
     public static long[] generateNumberArray(int size, double minX, double maxX, double minY, double maxY) {
         RandomNumberGenerator rng = new RandomNumberGenerator();
@@ -454,6 +545,105 @@ public class tela extends javax.swing.JFrame {
                
                jTextArea2.setText( teste );
    }
+   
+   
+   private void exportData(String listModel) {
+        FileWriter exp = null;
+        try {
+            String filename = saveFile("Arquivos TXT", "txt");
+            exp= new FileWriter(filename);
+            exp.write(listModel);
+            exp.close();
+        } catch (IOException ex) {
+            Logger.getLogger(tela.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+   
+   
+   private Long[] importData() {
+        try {
+            String filename = openFile("Arquivos TXT", "txt");
+            Path path = Paths.get(filename);
+            List<String> lines = Files.readAllLines(path);
+            String x,b = new String();
+            
+            //Double jj= new Double(1);
+            Long[] spl = new Long[]{};
+            for (String line : lines) {
+                try {
+                    x = (line+"\n");
+                    b=b+x;
+                } catch (Exception ex) {
+                    String msg = "Impossível converter: " + line;
+                    System.out.println(msg);        
+                }
+                g = Long.valueOf(line);
+                
+                int n = SET.length;
+                long f=g; 
+                //jTextArea2.setText(null); 
+                
+                SET = addX(n, SET, f);
+                
+            jTextArea1.setText(b);      
+            }
+                
+            return spl;
+        } catch (IOException ex) {
+            Logger.getLogger(tela.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+   
+   public static long[] addX ( int n, long arr[], long x) 
+    { 
+        
+        int i; 
+  
+        // create a new array of size n+1 
+        long ne[] = new long [n + 1]; 
+  
+        // insert the elements from 
+        // the old array into the new array 
+        // insert all elements till n 
+        // then insert x at n+1 
+        for (i = 0; i < n; i++) 
+            ne[i] = arr[i]; 
+  
+        ne[n] = x; 
+  
+        return ne; 
+    } 
+  
+
+   
+   
+   private String openFile(String desc, String ext) {
+        JFileChooser fc = browseFile(desc, ext);
+        if (fc.showOpenDialog(new javax.swing.JButton()) == JFileChooser.APPROVE_OPTION) {
+            return fc.getSelectedFile().getAbsolutePath();
+        } else return null;
+    }
+    
+   
+   
+   
+      private String saveFile(String desc, String ext) {
+        JFileChooser fc = browseFile(desc, ext);
+        fc.setSelectedFile(new File("." + ext));
+        if (fc.showSaveDialog(new javax.swing.JButton()) == JFileChooser.APPROVE_OPTION) {
+            return fc.getSelectedFile().getAbsolutePath();
+        } else return null;
+    }
+      
+      private javax.swing.JFileChooser browseFile(String desc, String ext) {
+        JFileChooser fc = new JFileChooser();
+        fc.setCurrentDirectory(new java.io.File("."));
+        fc.setDialogTitle("Selecione o arquivo...");
+        fc.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter(desc, ext));
+        return fc;
+    }
+   
     
     /**
      * @param args the command line arguments
@@ -514,6 +704,12 @@ public class tela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
