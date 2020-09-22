@@ -23,6 +23,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -140,7 +141,7 @@ public class tela extends javax.swing.JFrame {
 
         jButton17.setBackground(new java.awt.Color(255, 255, 255));
         jButton17.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        jButton17.setText("500");
+        jButton17.setText("1.000");
         jButton17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton17ActionPerformed(evt);
@@ -149,7 +150,7 @@ public class tela extends javax.swing.JFrame {
 
         jButton10.setBackground(new java.awt.Color(255, 255, 255));
         jButton10.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
-        jButton10.setText("1.000");
+        jButton10.setText("500");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton10ActionPerformed(evt);
@@ -207,6 +208,7 @@ public class tela extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jTextArea1.setRows(5);
+        jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jScrollPane1.setViewportView(jTextArea1);
 
         jLabel4.setFont(new java.awt.Font("Sitka Text", 0, 16)); // NOI18N
@@ -291,6 +293,7 @@ public class tela extends javax.swing.JFrame {
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jTextArea2.setRows(5);
+        jTextArea2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jScrollPane2.setViewportView(jTextArea2);
 
         jButton14.setBackground(new java.awt.Color(255, 255, 255));
@@ -323,6 +326,7 @@ public class tela extends javax.swing.JFrame {
         jTextArea3.setColumns(20);
         jTextArea3.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jTextArea3.setRows(5);
+        jTextArea3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jScrollPane3.setViewportView(jTextArea3);
 
         jLabel2.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
@@ -364,24 +368,29 @@ public class tela extends javax.swing.JFrame {
                                                     .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addGap(12, 12, 12)
+                                                        .addGap(20, 20, 20)
                                                         .addComponent(jLabel4)))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                            .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                                         .addGap(68, 68, 68)
                                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                             .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                    .addComponent(jLabel7)))
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(11, 11, 11))))
                                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(19, 19, 19)
@@ -401,9 +410,7 @@ public class tela extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25))))
+                        .addGap(25, 879, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -529,6 +536,11 @@ public class tela extends javax.swing.JFrame {
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem4.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
         jMenuItem4.setText("Exportar desordenado");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem4);
 
         jMenuBar1.add(jMenu2);
@@ -688,12 +700,12 @@ public class tela extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        
-        SET=generateNumberArray (1000,-1.074055,-9.309178,-69.607934,-46.202623);
+        SET=generateNumberArray (500,-1.074055,-9.309178,-69.607934,-46.202623);
         //jLabel3.setText("Novo: "+Arrays.toString(SET));
         
         Order();
-        informe(1000);
+        informe(500);        
+        
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
@@ -735,11 +747,21 @@ public static long getMinValue(long[] numbers){
   return minValue;
 }
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        exportData(jTextArea2.getText());
+        if (jTextArea2.getText().trim().length() == 0){
+            JOptionPane.showMessageDialog(this,"O campo selecionado para exportação está vazio.",
+             "ERRO: Exportação de arquivo",JOptionPane.ERROR_MESSAGE);
+                    
+        }else{
+        exportData(jTextArea2.getText());}
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        exportData(jTextArea3.getText());
+        if (jTextArea3.getText().trim().length() == 0){
+            JOptionPane.showMessageDialog(this,"O campo selecionado para exportação está vazio.",
+             "ERRO: Exportação de arquivo",JOptionPane.ERROR_MESSAGE);
+                    
+        }else{
+        exportData(jTextArea3.getText());}
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -773,11 +795,11 @@ public static long getMinValue(long[] numbers){
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
          
-        SET=generateNumberArray (500,-1.074055,-9.309178,-69.607934,-46.202623);
+        SET=generateNumberArray (1000,-1.074055,-9.309178,-69.607934,-46.202623);
         //jLabel3.setText("Novo: "+Arrays.toString(SET));
         
         Order();
-        informe(500);
+        informe(1000);
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
@@ -913,9 +935,23 @@ public static long getMinValue(long[] numbers){
         jTextField1.setForeground(black);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+       if (jTextArea1.getText().trim().length() == 0){
+            JOptionPane.showMessageDialog(this,"O campo selecionado para exportação está vazio.",
+             "ERRO: Exportação de arquivo",JOptionPane.ERROR_MESSAGE);
+                    
+        }else{
+        exportData(jTextArea1.getText());}
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {                                          
         try{
        String a=jTextField1.getText();
+       if (a.isEmpty()){
+           JOptionPane.showMessageDialog(this,"O campo está vazio.",
+            "ERRO: Geração personalizada",JOptionPane.WARNING_MESSAGE);
+            return;  
+       }
        
        int b =Integer.parseInt(a);
         if (b<=100000)
@@ -924,8 +960,14 @@ public static long getMinValue(long[] numbers){
        
        Order();
        informe(b);}
-       catch (RuntimeException ex) {
-            Logger.getLogger(tela.class.getName()).log(Level.SEVERE, null, ex);
+       catch (NumberFormatException ex) {
+           JOptionPane.showMessageDialog(this,"O campo só aceita numerais, com máximo de 100.000 por vez.",
+                   "ERRO: Geração personalizada",JOptionPane.ERROR_MESSAGE);
+           jTextField1.setText("");
+           jTextField1.requestFocus();
+//            logaux=("Exportado com sucesso para: \n\n" );
+//            logcontent=logcontent+logaux;  
+//            jTextArea3.setText(logcontent);
     }                                                                                  
     }
     public static long[] generateNumberArray(int size, double minX, double maxX, double minY, double maxY) {
@@ -985,8 +1027,10 @@ public static long getMinValue(long[] numbers){
             logcontent=logcontent+logaux;  
             jTextArea3.setText(logcontent);
            
-        } catch (IOException ex) {
-            Logger.getLogger(tela.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException |NullPointerException ex) {
+//            Logger.getLogger(tela.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this,"Destino não selecionado. Operação de exportação não realizada.",
+                 "ERRO: Exportação de arquivo",JOptionPane.ERROR_MESSAGE);
         }
     }
    
@@ -1005,13 +1049,13 @@ public static long getMinValue(long[] numbers){
                 try {
                     x = (line+"\n");
                     b=b+x;
+                    g = Long.valueOf(line);
                 } catch (Exception ex) {
-                    String msg = "Impossível converter: " + line;
-                    System.out.println(msg);   
-                    jLabel2.setText(msg);
+                    JOptionPane.showMessageDialog(this,"O arquivo selecionado possui conteúdo não numérico.",
+                   "ERRO: Importação de arquivo",JOptionPane.ERROR_MESSAGE);
+                    break;
                 }
-                g = Long.valueOf(line);
-                
+               
                 int n = SET.length;
                 long f=g; 
                 //jTextArea2.setText(null); 
@@ -1020,11 +1064,12 @@ public static long getMinValue(long[] numbers){
                 
             jTextArea1.setText(b);      
             }
-              
+            if (g>0){  
             logaux=(filename + " foi importado com sucesso!" + "\n\n" );
             logcontent=logcontent+logaux;  
             jTextArea3.setText(logcontent);
             return spl;
+            }
         } catch (IOException ex) {
             Logger.getLogger(tela.class.getName()).log(Level.SEVERE, null, ex);
         }
