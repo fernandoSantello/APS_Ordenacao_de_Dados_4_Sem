@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package main;
-import java.awt.Color;
+import java.awt.Color; 
+import static java.awt.Color.black;
+import static java.awt.Color.white;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -100,6 +102,9 @@ public class tela extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -532,6 +537,29 @@ public class tela extends javax.swing.JFrame {
         jMenu3.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jMenuBar1.add(jMenu3);
 
+        jMenu4.setText("Tema");
+        jMenu4.setActionCommand("Tema");
+        jMenu4.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+
+        jMenuItem5.setText("Tema Padrão");
+        jMenuItem5.setActionCommand("Tema Padrão");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem5);
+
+        jMenuItem6.setText("Tema Noturno");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem6);
+
+        jMenuBar1.add(jMenu4);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -760,6 +788,130 @@ public static long getMinValue(long[] numbers){
         Order();
         informe(5000);
     }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        jPanel1.setBackground(new Color(20, 19, 19));
+        jLabel6.setForeground(white);
+        jLabel4.setForeground(white);
+        jLabel7.setForeground(white);
+        jLabel5.setForeground(white);
+        jLabel1.setForeground(white);
+        jLabel8.setForeground(white);
+        jLabel10.setForeground(white);
+        jLabel3.setForeground(white);
+        jLabel2.setForeground(white);
+        jButton8.setBackground(new Color(31, 43, 171));
+        jButton8.setForeground(white);
+        jButton16.setBackground(new Color(31, 43, 171));
+        jButton16.setForeground(white);
+        jButton9.setBackground(new Color(31, 43, 171));
+        jButton9.setForeground(white);
+        jButton10.setBackground(new Color(31, 43, 171));
+        jButton10.setForeground(white);
+        jButton17.setBackground(new Color(31, 43, 171));
+        jButton17.setForeground(white);
+        jButton18.setBackground(new Color(31, 43, 171));
+        jButton18.setForeground(white);
+        jButton11.setBackground(new Color(31, 43, 171));
+        jButton11.setForeground(white);
+        jButton12.setBackground(new Color(31, 43, 171));
+        jButton12.setForeground(white);
+        jButton19.setBackground(new Color(31, 43, 171));
+        jButton19.setForeground(white);
+        jButton13.setBackground(new Color(31, 43, 171));
+        jButton13.setForeground(white);
+        jButton2.setBackground(new Color(31, 43, 171));
+        jButton2.setForeground(white);
+        jButton4.setBackground(new Color(31, 43, 171));
+        jButton4.setForeground(white);
+        jButton7.setBackground(new Color(31, 43, 171));
+        jButton7.setForeground(white);
+        jButton3.setBackground(new Color(31, 43, 171));
+        jButton3.setForeground(white);
+        jButton5.setBackground(new Color(31, 43, 171));
+        jButton5.setForeground(white);
+        jButton6.setBackground(new Color(31, 43, 171));
+        jButton6.setForeground(white);
+        jButton1.setBackground(new Color(31, 43, 171));
+        jButton1.setForeground(white);
+        jButton14.setBackground(new Color(31, 43, 171));
+        jButton14.setForeground(white);
+        jButton15.setBackground(new Color(31, 43, 171));
+        jButton15.setForeground(white);
+        jTextArea1.setBackground(new Color(67, 68, 87));
+        jTextArea1.setForeground(white);
+        jTextArea2.setBackground(new Color(67, 68, 87));
+        jTextArea2.setForeground(white);
+        jTextArea3.setBackground(new Color(67, 68, 87));
+        jTextArea3.setForeground(white);
+        jTextField1.setBackground(new Color(67, 68, 87));
+        jTextField1.setForeground(white);
+        
+        
+        
+        
+        
+       
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        jPanel1.setBackground(new Color(255,204,102));
+        jLabel6.setForeground(black);
+        jLabel4.setForeground(black);
+        jLabel7.setForeground(black);
+        jLabel5.setForeground(black);
+        jLabel1.setForeground(black);
+        jLabel8.setForeground(black);
+        jLabel10.setForeground(black);
+        jLabel3.setForeground(black);
+        jLabel2.setForeground(black);
+        jButton8.setBackground(new Color(255, 255, 255));
+        jButton8.setForeground(black);
+        jButton16.setBackground(new Color(255, 255, 255));
+        jButton16.setForeground(black);
+        jButton9.setBackground(new Color(255, 255, 255));
+        jButton9.setForeground(black);
+        jButton10.setBackground(new Color(255, 255, 255));
+        jButton10.setForeground(black);
+        jButton17.setBackground(new Color(255, 255, 255));
+        jButton17.setForeground(black);
+        jButton18.setBackground(new Color(255, 255, 255));
+        jButton18.setForeground(black);
+        jButton11.setBackground(new Color(255, 255, 255));
+        jButton11.setForeground(black);
+        jButton12.setBackground(new Color(255, 255, 255));
+        jButton12.setForeground(black);
+        jButton19.setBackground(new Color(255, 255, 255));
+        jButton19.setForeground(black);
+        jButton13.setBackground(new Color(255, 255, 255));
+        jButton13.setForeground(black);
+        jButton2.setBackground(new Color(255, 255, 255));
+        jButton2.setForeground(black);
+        jButton4.setBackground(new Color(255, 255, 255));
+        jButton4.setForeground(black);
+        jButton7.setBackground(new Color(255, 255, 255));
+        jButton7.setForeground(black);
+        jButton3.setBackground(new Color(255, 255, 255));
+        jButton3.setForeground(black);
+        jButton5.setBackground(new Color(255, 255, 255));
+        jButton5.setForeground(black);
+        jButton6.setBackground(new Color(255, 255, 255));
+        jButton6.setForeground(black);
+        jButton1.setBackground(new Color(255, 255, 255));
+        jButton1.setForeground(black);
+        jButton14.setBackground(new Color(255, 255, 255));
+        jButton14.setForeground(black);
+        jButton15.setBackground(new Color(255, 255, 255));
+        jButton15.setForeground(black);
+        jTextArea1.setBackground(new Color(255,255,255));
+        jTextArea1.setForeground(black);
+        jTextArea2.setBackground(new Color(255,255,255));
+        jTextArea2.setForeground(black);
+        jTextArea3.setBackground(new Color(255,255,255));
+        jTextArea3.setForeground(black);
+        jTextField1.setBackground(new Color(255,255,255));
+        jTextField1.setForeground(black);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {                                          
         try{
@@ -1526,11 +1678,14 @@ public static long getMinValue(long[] numbers){
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
