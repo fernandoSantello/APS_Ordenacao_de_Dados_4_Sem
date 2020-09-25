@@ -106,6 +106,7 @@ public class tela extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
@@ -489,17 +490,14 @@ public class tela extends javax.swing.JFrame {
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton19)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9)
-                        .addGap(22, 22, 22))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         jMenu1.setText("Importar");
@@ -554,14 +552,22 @@ public class tela extends javax.swing.JFrame {
 
         jMenu3.setText("Informações");
         jMenu3.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+
+        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem7.setText("Info Úteis");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem7);
+
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Tema");
-        jMenu4.setActionCommand("Tema");
         jMenu4.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
 
         jMenuItem5.setText("Tema Padrão");
-        jMenuItem5.setActionCommand("Tema Padrão");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem5ActionPerformed(evt);
@@ -952,6 +958,17 @@ public static long getMinValue(long[] numbers){
         }else{
         exportData(jTextArea1.getText());}
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+private JanelaSecundaria j3 = null;
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+         if (j3 == null) {
+            j3 = new JanelaSecundaria(this);
+        }
+//        Point p = this.getLocation();
+//        p.y += this.getHeight();
+//        j3.setLocation(p);
+        j3.setVisible(true);
+          
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {                                          
         try{
@@ -962,15 +979,21 @@ public static long getMinValue(long[] numbers){
             return;  
        }
        
-       int b =Integer.parseInt(a);
-        if (b<=100000)
-      
+       int b = Integer.parseInt(a);
+       if (b>100000){
+         JOptionPane.showMessageDialog(this,"A função de quantidade personalizada só permite valores iguais ou inferiores a 100.000",
+                   "ERRO: Geração personalizada",JOptionPane.ERROR_MESSAGE);
+            jTextField1.setText("");
+            jTextField1.requestFocus();
+         return;
+       }
        SET=generateNumberArray (b,-1.074055,-9.309178,-69.607934,-46.202623);
        
        Order();
-       informe(b);}
-       catch (NumberFormatException ex) {
-           JOptionPane.showMessageDialog(this,"O campo só aceita numerais, com máximo de 100.000 por vez.",
+       informe(b);
+
+        }catch (NumberFormatException ex) {
+           JOptionPane.showMessageDialog(this,"O campo só aceita numerais inteiros. Por favor insira valores numéricos inteiros!",
                    "ERRO: Geração personalizada",JOptionPane.ERROR_MESSAGE);
            jTextField1.setText("");
            jTextField1.requestFocus();
@@ -999,7 +1022,8 @@ public static long getMinValue(long[] numbers){
     }
     
  
-    
+                                         
+
     
      public void Order(){
         String teste="", aux="";
@@ -1739,6 +1763,7 @@ public static long getMinValue(long[] numbers){
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
