@@ -36,52 +36,28 @@ public class JanelaSecundaria extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Tela de Informações - Lovelace");
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
-
-        jLabel1.setFont(new java.awt.Font("Sitka Text", 0, 24)); // NOI18N
-        jLabel1.setText("Olá, bem vindo a Tela de Informações!");
+        jPanel1.setBackground(new java.awt.Color(255, 204, 102));
 
         jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(102, 204, 255));
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("Esse é um programa voltado para\na ordenação de dados numéricos,\ne os mesmo podem ser gerados\naleatoriamente pelo programa,\nou importados de arquivos de\ntexto. Note para que a importação\nde arquivos de texto, o arquivo\nprecisar estar em formato .TXT,\ne também conter apenas UM número\npor linha.\n\nAs formas de ordenação são variadas,\ne estas são,em ordem de eficiência:\nBubble Sort, Insertion Sort,\nShell Sort ,Selection Sort, Heap Sort, \nMerge Sort e Quick Sort. Quando se trata de\num conjunto de poucos números, como 100 ou \n500, a diferença entre os métodos não são\ntão relevantes. Mas tratando de grandes \nconjuntos como 10.000 ou 100.000, a\ndiferança de tempo se torna explícita.");
+        jTextArea1.setText("Olá, seja bem vindo ao novo programa do\nTeam Lovelace!\n\nEsse é um programa voltado para\na ordenação de dados numéricos,\ne os mesmo podem ser gerados\naleatoriamente pelo programa,\nou importados de arquivos de\ntexto. Note para que a importação\nde arquivos de texto, o arquivo\nprecisar estar em formato .TXT,\ne também conter apenas UM número\npor linha.\n\nAs formas de ordenação são variadas,\ne estas são,em ordem de eficiência:\nBubble Sort, Insertion Sort,\nShell Sort ,Selection Sort, Heap Sort, \nMerge Sort e Quick Sort. Quando se trata de\num conjunto de poucos números, como 100 ou \n500, a diferença entre os métodos não são\ntão relevantes. Mas tratando de grandes \nconjuntos como 10.000 ou 100.000, a\ndiferença de tempo se torna explícita.\n---------------------------------------------\nTempo médio de geração de arquivos:\n\n10 localizações ----------- 1 segundo\n50 localizações ----------- 1 segundo\n100 localizações ---------- 1 segundo\n500 localizações ---------- 2 segundos\n1.000 localizações -------- 2 segundos\n5.000 localizações -------- 4 segundos\n10.000 localizações ------- 8 segundos\n100.000 localizações ----- 85 segundos\n---------------------------------------------\nTempo médio de importação de arquivos:\n\n10 localizações ----------- 1 segundo\n50 localizações ----------- 1 segundo\n100 localizações ---------- 1 segundo\n500 localizações ---------- 2 segundos\n1.000 localizações -------- 2 segundos\n5.000 localizações -------- 55 segundos\n10.000 localizações ------ 10 minutos\n100.000 localizações ----- 90 minutos\n---------------------------------------------\nTodas as exportações são quase instantâneas!\n---------------------------------------------\n\nEspero que goste do programa!");
         jTextArea1.setBorder(null);
         jTextArea1.setCaretColor(new java.awt.Color(255, 204, 102));
         jTextArea1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTextArea1.setName(""); // NOI18N
         jScrollPane1.setViewportView(jTextArea1);
 
-        jTextArea2.setEditable(false);
-        jTextArea2.setBackground(new java.awt.Color(102, 204, 255));
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jTextArea2.setText("Tempo médio de geração de arquivos:\n\n10 localizações ----------- 1 segundo\n50 localizações ----------- 1 segundo\n100 localizações ---------- 1 segundo\n500 localizações ---------- 2 segundos\n1.000 localizações -------- 2 segundos\n5.000 localizações -------- 4 segundos\n10.000 localizações ------- 8 segundos\n100.000 localizações ------ 85 segundos\n");
-        jScrollPane2.setViewportView(jTextArea2);
-
-        jTextArea3.setEditable(false);
-        jTextArea3.setBackground(new java.awt.Color(102, 204, 255));
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jTextArea3.setText("Tempo médio de importação de arquivos:\n\n10 localizações ----------- 1 segundo\n50 localizações ----------- 1 segundo\n100 localizações ---------- 1 segundo\n500 localizações ---------- 2 segundos\n1.000 localizações -------- 2 segundos\n5.000 localizações -------- 55 segundos\n10.000 localizações ------- 250 segundos\n100.000 localizações ------ 85 segundos\n");
-        jScrollPane3.setViewportView(jTextArea3);
-
-        jLabel2.setBackground(new java.awt.Color(102, 204, 255));
-        jLabel2.setText("Todas as exportações são quase instantâneas");
-        jLabel2.setOpaque(true);
-
+        jLabel10.setBackground(new java.awt.Color(0, 0, 0));
         jLabel10.setFont(new java.awt.Font("Papyrus", 1, 14)); // NOI18N
         jLabel10.setText("TEAM ");
 
@@ -93,65 +69,43 @@ public class JanelaSecundaria extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(20, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel10)
-                                .addGap(54, 54, 54))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(326, 326, 326))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel10)))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(24, 24, 24)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(72, 72, 72)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -191,16 +145,10 @@ public class JanelaSecundaria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
     // End of variables declaration//GEN-END:variables
 }

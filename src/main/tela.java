@@ -38,6 +38,7 @@ public class tela extends javax.swing.JFrame {
         private static long[] SET = {  };
          String logaux="", logcontent="";
          long w,g;
+         //int a=0;
          ArrayList<Long> s = new ArrayList<Long>();
          
          
@@ -112,9 +113,11 @@ public class tela extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Ordenador de Dados - Lovelace");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 102));
+        jPanel1.setName(""); // NOI18N
 
         jButton8.setBackground(new java.awt.Color(255, 255, 255));
         jButton8.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
@@ -599,6 +602,7 @@ public class tela extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     
@@ -609,7 +613,10 @@ public class tela extends javax.swing.JFrame {
     
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+        if (SET.length == 0){
+                JOptionPane.showMessageDialog(this,"Não existem valores a serem ordenados.",
+                 "ERRO: Ordenação",JOptionPane.ERROR_MESSAGE);
+        }else{
         BenchMark bmm = new BenchMark();
         bmm.reset();
         //jLabel3.setText("Antes: "+Arrays.toString(SET));
@@ -621,11 +628,16 @@ public class tela extends javax.swing.JFrame {
         log(bmm, "QUICK SORT");
        //jTextArea3.setText(("Duração total: " + bmm.getElapsed() + " milissegundos.\n"));
        OrderCP();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     
     
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        if (SET.length == 0){
+                JOptionPane.showMessageDialog(this,"Não existem valores a serem ordenados.",
+                 "ERRO: Ordenação",JOptionPane.ERROR_MESSAGE);
+        }else{
         BenchMark bmm = new BenchMark();
         bmm.reset();
         //jLabel3.setText("Antes: "+Arrays.toString(SET));
@@ -635,9 +647,14 @@ public class tela extends javax.swing.JFrame {
        ////jLabel2.setText("Depois: "+Arrays.toString(SET));
        log(bmm, "MERGE SORT");
        OrderCP();
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if (SET.length == 0){
+                JOptionPane.showMessageDialog(this,"Não existem valores a serem ordenados.",
+                 "ERRO: Ordenação",JOptionPane.ERROR_MESSAGE);
+        }else{
         BenchMark bmm = new BenchMark();
         bmm.reset();
         //jLabel3.setText("Antes: "+Arrays.toString(SET));
@@ -647,9 +664,14 @@ public class tela extends javax.swing.JFrame {
        ////jLabel2.setText("Depois: "+Arrays.toString(SET));
        log(bmm, "BUBBLE SORT");
        OrderCP();
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        if (SET.length == 0){
+                JOptionPane.showMessageDialog(this,"Não existem valores a serem ordenados.",
+                 "ERRO: Ordenação",JOptionPane.ERROR_MESSAGE);
+        }else{
         BenchMark bmm = new BenchMark();
         bmm.reset();
         //jLabel3.setText("Antes: "+Arrays.toString(SET));
@@ -658,10 +680,14 @@ public class tela extends javax.swing.JFrame {
        ////jLabel2.setText("Depois: "+Arrays.toString(SET));
        log(bmm, "HEAP SORT");
        OrderCP();
-               
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        if (SET.length == 0){
+                JOptionPane.showMessageDialog(this,"Não existem valores a serem ordenados.",
+                 "ERRO: Ordenação",JOptionPane.ERROR_MESSAGE);
+        }else{
         BenchMark bmm = new BenchMark();
         bmm.reset();
         //jLabel3.setText("Antes: "+Arrays.toString(SET));
@@ -670,9 +696,14 @@ public class tela extends javax.swing.JFrame {
        //jLabel2.setText("Depois: "+Arrays.toString(SET));
        log(bmm, "SELECTION SORT");
        OrderCP();
+        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        if (SET.length == 0){
+                JOptionPane.showMessageDialog(this,"Não existem valores a serem ordenados.",
+                 "ERRO: Ordenação",JOptionPane.ERROR_MESSAGE);
+        }else{
         BenchMark bmm = new BenchMark();
         bmm.reset();
         //jLabel3.setText("Antes: "+Arrays.toString(SET));
@@ -681,9 +712,14 @@ public class tela extends javax.swing.JFrame {
        //jLabel2.setText("Depois: "+Arrays.toString(SET));
        log(bmm, "SHELL SORT");
        OrderCP();
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        if (SET.length == 0){
+                JOptionPane.showMessageDialog(this,"Não existem valores a serem ordenados.",
+                 "ERRO: Ordenação",JOptionPane.ERROR_MESSAGE);
+        }else{
         BenchMark bmm = new BenchMark();
         bmm.reset();
         //jLabel3.setText("Antes: "+Arrays.toString(SET));
@@ -692,6 +728,7 @@ public class tela extends javax.swing.JFrame {
         //jLabel2.setText("Depois: "+Arrays.toString(SET));
         log(bmm, "INSERTION SORT");
         OrderCP();
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -823,7 +860,7 @@ public static long getMinValue(long[] numbers){
         Order();
         informe(5000);
     }//GEN-LAST:event_jButton18ActionPerformed
-
+ 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         jPanel1.setBackground(new Color(20, 19, 19));
         jLabel6.setForeground(white);
@@ -881,6 +918,7 @@ public static long getMinValue(long[] numbers){
         jTextArea3.setForeground(white);
         jTextField1.setBackground(new Color(67, 68, 87));
         jTextField1.setForeground(white);
+    
         
         
         
@@ -1061,7 +1099,7 @@ private JanelaSecundaria j3 = null;
             jTextArea3.setText(logcontent);
            
         } catch (IOException |NullPointerException ex) {
-//            Logger.getLogger(tela.class.getName()).log(Level.SEVERE, null, ex);
+        // Logger.getLogger(tela.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this,"Destino não selecionado. Operação de exportação não realizada.",
                  "ERRO: Exportação de arquivo",JOptionPane.ERROR_MESSAGE);
         }
@@ -1074,6 +1112,10 @@ private JanelaSecundaria j3 = null;
             String filename = openFile("Arquivos TXT", "txt");
             Path path = Paths.get(filename);
             List<String> lines = Files.readAllLines(path);
+            if (lines.isEmpty()){
+                JOptionPane.showMessageDialog(this,"O arquivo selecionado para importação está vazio!.",
+                   "ERRO: Importação de arquivo",JOptionPane.ERROR_MESSAGE);
+            }
             String x,b = new String();
             
             //Double jj= new Double(1);
@@ -1103,8 +1145,10 @@ private JanelaSecundaria j3 = null;
             jTextArea3.setText(logcontent);
             return spl;
             }
-        } catch (IOException ex) {
-            Logger.getLogger(tela.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (IOException |NullPointerException ex) {
+        // Logger.getLogger(tela.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this,"Arquivo não selecionado. Operação de importação não realizada.",
+                 "ERRO: Importação de arquivo",JOptionPane.ERROR_MESSAGE);
         }
         return null;
     }
