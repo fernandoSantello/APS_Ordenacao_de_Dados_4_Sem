@@ -13,43 +13,29 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import util.*;
 import sort.*;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-        import javax.swing.UIManager;
-import javax.swing.plaf.ColorUIResource;
-
 
 /**
  *
  * @author ferna
  */
 
-public class tela extends javax.swing.JFrame {
+public class Tela extends javax.swing.JFrame {
         DefaultListModel listModel;
         private static long[] SET = {  };
          String logaux="", logcontent="";
          long w,g;
-         //int a=0;
-         ArrayList<Long> s = new ArrayList<Long>();
-         
-         
-//        private static int[] SETA = { 54, 2, 98, 4, 98, 3, 23, 43, 65, 56, 12, 76,
-//			71, 21, 21, 48, 2, 8, 10, 90, 60, 50, 95, 13, 82, 59, 20, 37, 52,
-//			68, 18, 19, 66, 31 };
         
     /**
      * Creates new form tela
      */
-    public tela() {
+    public Tela() {
         initComponents();
     }
 
@@ -115,6 +101,7 @@ public class tela extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ordenador de Dados - Lovelace");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 102));
         jPanel1.setName(""); // NOI18N
@@ -604,128 +591,88 @@ public class tela extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
     
-//     private double value;
-//    public double getValue() {
-//        return value;
-//    }
-    
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (SET.length == 0){
-                JOptionPane.showMessageDialog(this,"Não existem valores a serem ordenados.",
-                 "ERRO: Ordenação",JOptionPane.ERROR_MESSAGE);
+        if (ChecadorNull(SET)==false){ 
         }else{
         BenchMark bmm = new BenchMark();
         bmm.reset();
-        //jLabel3.setText("Antes: "+Arrays.toString(SET));
-        
         QuickSort.sort(SET);
         bmm.setElapsed();
-        //bmm.setElapsed();
-       ////jLabel2.setText("Depois: "+Arrays.toString(SET));
         log(bmm, "QUICK SORT");
-       //jTextArea3.setText(("Duração total: " + bmm.getElapsed() + " milissegundos.\n"));
-       OrderCP();
+        OrderCP();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     
     
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        if (SET.length == 0){
-                JOptionPane.showMessageDialog(this,"Não existem valores a serem ordenados.",
-                 "ERRO: Ordenação",JOptionPane.ERROR_MESSAGE);
+        if (ChecadorNull(SET)==false){
         }else{
         BenchMark bmm = new BenchMark();
         bmm.reset();
-        //jLabel3.setText("Antes: "+Arrays.toString(SET));
-      
         MergeSort.sort(SET);
         bmm.setElapsed();
-       ////jLabel2.setText("Depois: "+Arrays.toString(SET));
        log(bmm, "MERGE SORT");
        OrderCP();
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if (SET.length == 0){
-                JOptionPane.showMessageDialog(this,"Não existem valores a serem ordenados.",
-                 "ERRO: Ordenação",JOptionPane.ERROR_MESSAGE);
+        if (ChecadorNull(SET)==false){
         }else{
         BenchMark bmm = new BenchMark();
         bmm.reset();
-        //jLabel3.setText("Antes: "+Arrays.toString(SET));
-        
         BubbleSort.sort(SET);
         bmm.setElapsed();
-       ////jLabel2.setText("Depois: "+Arrays.toString(SET));
        log(bmm, "BUBBLE SORT");
        OrderCP();
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        if (SET.length == 0){
-                JOptionPane.showMessageDialog(this,"Não existem valores a serem ordenados.",
-                 "ERRO: Ordenação",JOptionPane.ERROR_MESSAGE);
+        if (ChecadorNull(SET)==false){
         }else{
         BenchMark bmm = new BenchMark();
         bmm.reset();
-        //jLabel3.setText("Antes: "+Arrays.toString(SET));
         HeapSort.sort(SET);
         bmm.setElapsed();
-       ////jLabel2.setText("Depois: "+Arrays.toString(SET));
        log(bmm, "HEAP SORT");
        OrderCP();
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        if (SET.length == 0){
-                JOptionPane.showMessageDialog(this,"Não existem valores a serem ordenados.",
-                 "ERRO: Ordenação",JOptionPane.ERROR_MESSAGE);
+        if (ChecadorNull(SET)==false){
         }else{
         BenchMark bmm = new BenchMark();
         bmm.reset();
-        //jLabel3.setText("Antes: "+Arrays.toString(SET));
         SelectionSort.sort(SET);
         bmm.setElapsed();
-       //jLabel2.setText("Depois: "+Arrays.toString(SET));
        log(bmm, "SELECTION SORT");
        OrderCP();
         }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        if (SET.length == 0){
-                JOptionPane.showMessageDialog(this,"Não existem valores a serem ordenados.",
-                 "ERRO: Ordenação",JOptionPane.ERROR_MESSAGE);
+        if (ChecadorNull(SET)==false){  
         }else{
         BenchMark bmm = new BenchMark();
         bmm.reset();
-        //jLabel3.setText("Antes: "+Arrays.toString(SET));
         ShellSort.sort(SET);
         bmm.setElapsed();
-       //jLabel2.setText("Depois: "+Arrays.toString(SET));
        log(bmm, "SHELL SORT");
        OrderCP();
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        if (SET.length == 0){
-                JOptionPane.showMessageDialog(this,"Não existem valores a serem ordenados.",
-                 "ERRO: Ordenação",JOptionPane.ERROR_MESSAGE);
+        if (ChecadorNull(SET)==false){  
         }else{
         BenchMark bmm = new BenchMark();
         bmm.reset();
-        //jLabel3.setText("Antes: "+Arrays.toString(SET));
         InsertionSort.sort(SET);
         bmm.setElapsed();
-        //jLabel2.setText("Depois: "+Arrays.toString(SET));
         log(bmm, "INSERTION SORT");
         OrderCP();
         }
@@ -733,74 +680,41 @@ public class tela extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         SET=generateNumberArray (10,-1.074055,-9.309178,-69.607934,-46.202623);
-        //jLabel3.setText("Novo: "+Arrays.toString(SET));
-        
         Order();
         informe(10);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         SET=generateNumberArray (100,-1.074055,-9.309178,-69.607934,-46.202623);
-        //jLabel3.setText("Novo: "+Arrays.toString(SET));
-        
-        
-        
         Order();
         informe(100);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         SET=generateNumberArray (500,-1.074055,-9.309178,-69.607934,-46.202623);
-        //jLabel3.setText("Novo: "+Arrays.toString(SET));
-        
         Order();
         informe(500);        
         
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        
         SET=generateNumberArray (10000,-1.074055,-9.309178,-69.607934,-46.202623);
-        //jLabel3.setText("Novo: "+Arrays.toString(SET));
-        
         Order();
         informe(10000);
         
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        
         SET=generateNumberArray (100000,-1.074055,-9.309178,-69.607934,-46.202623);
-        //jLabel3.setText("Novo: "+Arrays.toString(SET));
-        
         Order();
         informe(100000);
         
     }//GEN-LAST:event_jButton12ActionPerformed
 
-    public static long getMaxValue(long[] numbers){
-  long maxValue = numbers[0];
-  for(int i=1;i < numbers.length;i++){
-    if(numbers[i] > maxValue){
-      maxValue = numbers[i];
-    }
-  }
-  return maxValue;
-}
-public static long getMinValue(long[] numbers){
-  long minValue = numbers[0];
-  for(int i=1;i<numbers.length;i++){
-    if(numbers[i] < minValue){
-      minValue = numbers[i];
-    }
-  }
-  return minValue;
-}
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         if (jTextArea2.getText().trim().length() == 0){
             JOptionPane.showMessageDialog(this,"O campo selecionado para exportação está vazio.",
-             "ERRO: Exportação de arquivo",JOptionPane.ERROR_MESSAGE);
-                    
+            "ERRO: Exportação de arquivo",JOptionPane.ERROR_MESSAGE);             
         }else{
         exportData(jTextArea2.getText());}
     }//GEN-LAST:event_jMenuItem1ActionPerformed
@@ -808,8 +722,7 @@ public static long getMinValue(long[] numbers){
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         if (jTextArea3.getText().trim().length() == 0){
             JOptionPane.showMessageDialog(this,"O campo selecionado para exportação está vazio.",
-             "ERRO: Exportação de arquivo",JOptionPane.ERROR_MESSAGE);
-                    
+            "ERRO: Exportação de arquivo",JOptionPane.ERROR_MESSAGE);           
         }else{
         exportData(jTextArea3.getText());}
     }//GEN-LAST:event_jMenuItem2ActionPerformed
@@ -822,7 +735,6 @@ public static long getMinValue(long[] numbers){
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         jTextArea1.setText(null);
         SET=generateNumberArray (0,0,0,0,0);
-        
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -835,28 +747,19 @@ public static long getMinValue(long[] numbers){
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-         
         SET=generateNumberArray (50,-1.074055,-9.309178,-69.607934,-46.202623);
-        //jLabel3.setText("Novo: "+Arrays.toString(SET));
-        
         Order();
         informe(50);
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-         
         SET=generateNumberArray (1000,-1.074055,-9.309178,-69.607934,-46.202623);
-        //jLabel3.setText("Novo: "+Arrays.toString(SET));
-        
         Order();
         informe(1000);
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-         
-        SET=generateNumberArray (5000,-1.074055,-9.309178,-69.607934,-46.202623);
-        //jLabel3.setText("Novo: "+Arrays.toString(SET));
-        
+         SET=generateNumberArray (5000,-1.074055,-9.309178,-69.607934,-46.202623);
         Order();
         informe(5000);
     }//GEN-LAST:event_jButton18ActionPerformed
@@ -917,14 +820,7 @@ public static long getMinValue(long[] numbers){
         jTextArea3.setBackground(new Color(67, 68, 87));
         jTextArea3.setForeground(white);
         jTextField1.setBackground(new Color(67, 68, 87));
-        jTextField1.setForeground(white);
-    
-        
-        
-        
-        
-        
-       
+        jTextField1.setForeground(white);   
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
@@ -983,29 +879,21 @@ public static long getMinValue(long[] numbers){
         jTextArea3.setBackground(new Color(255,255,255));
         jTextArea3.setForeground(black);
         jTextField1.setBackground(new Color(255,255,255));
-        jTextField1.setForeground(black);
-        
-        
+        jTextField1.setForeground(black);    
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
        if (jTextArea1.getText().trim().length() == 0){
             JOptionPane.showMessageDialog(this,"O campo selecionado para exportação está vazio.",
-             "ERRO: Exportação de arquivo",JOptionPane.ERROR_MESSAGE);
-                    
+            "ERRO: Exportação de arquivo",JOptionPane.ERROR_MESSAGE);         
         }else{
         exportData(jTextArea1.getText());}
     }//GEN-LAST:event_jMenuItem4ActionPerformed
-private JanelaSecundaria j3 = null;
+    private Info info = null;
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-         if (j3 == null) {
-            j3 = new JanelaSecundaria(this);
-        }
-//        Point p = this.getLocation();
-//        p.y += this.getHeight();
-//        j3.setLocation(p);
-        j3.setVisible(true);
-          
+         if (info == null) {
+            info = new Info(this);}
+        info.setVisible(true);    
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {                                          
@@ -1013,32 +901,26 @@ private JanelaSecundaria j3 = null;
        String a=jTextField1.getText();
        if (a.isEmpty()){
            JOptionPane.showMessageDialog(this,"O campo está vazio.",
-            "ERRO: Geração personalizada",JOptionPane.WARNING_MESSAGE);
-            return;  
+           "ERRO: Geração personalizada",JOptionPane.WARNING_MESSAGE);
+           return;  
        }
-       
        int b = Integer.parseInt(a);
        if (b>100000){
          JOptionPane.showMessageDialog(this,"A função de quantidade personalizada só permite valores iguais ou inferiores a 100.000",
-                   "ERRO: Geração personalizada",JOptionPane.ERROR_MESSAGE);
+         "ERRO: Geração personalizada",JOptionPane.ERROR_MESSAGE);
             jTextField1.setText("");
             jTextField1.requestFocus();
          return;
        }
        SET=generateNumberArray (b,-1.074055,-9.309178,-69.607934,-46.202623);
-       
        Order();
        informe(b);
-
-        }catch (NumberFormatException ex) {
+       }catch (NumberFormatException ex) {
            JOptionPane.showMessageDialog(this,"O campo só aceita numerais inteiros. Por favor insira valores numéricos inteiros!",
-                   "ERRO: Geração personalizada",JOptionPane.ERROR_MESSAGE);
+           "ERRO: Geração personalizada",JOptionPane.ERROR_MESSAGE);
            jTextField1.setText("");
            jTextField1.requestFocus();
-//            logaux=("Exportado com sucesso para: \n\n" );
-//            logcontent=logcontent+logaux;  
-//            jTextArea3.setText(logcontent);
-    }                                                                                  
+        }                                                                                  
     }
     public static long[] generateNumberArray(int size, double minX, double maxX, double minY, double maxY) {
         RandomNumberGenerator rng = new RandomNumberGenerator();
@@ -1052,39 +934,23 @@ private JanelaSecundaria j3 = null;
        jTextArea3.setText(logcontent);
     }
     
-    private void logimp(BenchMark bmm, String TypeofSort){
-       logaux=("Ordenação realizada em: " +"[ " + new Date() + " |  "+TypeofSort+ "] Array com " + SET.length + 
-       " localizações. Duração total: " + bmm.getElapsed() + " milissegundos.\n\n");
-       logcontent=logcontent+logaux;  
-       jTextArea3.setText(logcontent);
-    }
-    
- 
-                                         
-
-    
-     public void Order(){
-        String teste="", aux="";
+     private void Order(){
+        String teste="", aux;
        jTextArea1.setText(null);   
-//        String teste="";
-       for (int j = 0; j < SET.length; j++) {
-               
+       for (int j = 0; j < SET.length; j++) {  
                aux=String.valueOf(String.valueOf(SET[j])+"\n");
-              teste=teste+aux;}
-               
+               teste=teste+aux;}
                jTextArea1.setText( teste );
-   }
+    }
    
-   public void OrderCP(){
+   private void OrderCP(){
         String teste="", aux="";
        jTextArea2.setText(null);   
        for (int j = 0; j < SET.length; j++) {
-               
                aux=String.valueOf(String.valueOf(SET[j])+"\n");
                teste=teste+aux;}
-               
                jTextArea2.setText( teste );
-   }
+    }
    
    
    private void exportData(String listModel) {
@@ -1096,29 +962,24 @@ private JanelaSecundaria j3 = null;
             exp.close();
             logaux=("Exportado com sucesso para: " + filename +"\n\n" );
             logcontent=logcontent+logaux;  
-            jTextArea3.setText(logcontent);
-           
+            jTextArea3.setText(logcontent);     
         } catch (IOException |NullPointerException ex) {
-        // Logger.getLogger(tela.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this,"Destino não selecionado. Operação de exportação não realizada.",
-                 "ERRO: Exportação de arquivo",JOptionPane.ERROR_MESSAGE);
+            "ERRO: Exportação de arquivo",JOptionPane.ERROR_MESSAGE);
         }
     }
    
    
    private Long[] importData() {
         try {
-            
             String filename = openFile("Arquivos TXT", "txt");
             Path path = Paths.get(filename);
             List<String> lines = Files.readAllLines(path);
             if (lines.isEmpty()){
                 JOptionPane.showMessageDialog(this,"O arquivo selecionado para importação está vazio!.",
-                   "ERRO: Importação de arquivo",JOptionPane.ERROR_MESSAGE);
+                "ERRO: Importação de arquivo",JOptionPane.ERROR_MESSAGE);
             }
             String x,b = new String();
-            
-            //Double jj= new Double(1);
             Long[] spl = new Long[]{};
             for (String line : lines) {
                 try {
@@ -1130,13 +991,9 @@ private JanelaSecundaria j3 = null;
                    "ERRO: Importação de arquivo",JOptionPane.ERROR_MESSAGE);
                     break;
                 }
-               
                 int n = SET.length;
                 long f=g; 
-                //jTextArea2.setText(null); 
-                
-                SET = addX(n, SET, f);
-                
+                SET = addX(n, SET, f);       
             jTextArea1.setText(b);      
             }
             if (g>0){  
@@ -1146,53 +1003,33 @@ private JanelaSecundaria j3 = null;
             return spl;
             }
          } catch (IOException |NullPointerException ex) {
-        // Logger.getLogger(tela.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this,"Arquivo não selecionado. Operação de importação não realizada.",
-                 "ERRO: Importação de arquivo",JOptionPane.ERROR_MESSAGE);
+            "ERRO: Importação de arquivo",JOptionPane.ERROR_MESSAGE);
         }
         return null;
     }
    
    public static long[] addX ( int n, long arr[], long x) 
     { 
-        
         int i; 
-  
-        // create a new array of size n+1 
         long ne[] = new long [n + 1]; 
-  
-        // insert the elements from 
-        // the old array into the new array 
-        // insert all elements till n 
-        // then insert x at n+1 
         for (i = 0; i < n; i++) 
             ne[i] = arr[i]; 
-  
-        ne[n] = x; 
-  
+             ne[n] = x; 
         return ne; 
-    } 
-  
-
-   
+    }   
    
    private String openFile(String desc, String ext) {
-       
         JFileChooser fc = browseFile(desc, ext);
         jLabel3.setText("Importando arquivo. Por favor aguarde...");
         if (fc.showOpenDialog(new javax.swing.JButton()) == JFileChooser.APPROVE_OPTION) {
             jLabel3.setText(null);
             return fc.getSelectedFile().getAbsolutePath();
-            
         } else jLabel3.setText(null);
             return null;
     }
-    
-   
-   
-   
+
       private String saveFile(String desc, String ext) {
-          
         JFileChooser fc = browseFile(desc, ext);
         fc.setSelectedFile(new File("." + ext));
         if (fc.showSaveDialog(new javax.swing.JButton()) == JFileChooser.APPROVE_OPTION) {
@@ -1209,16 +1046,21 @@ private JanelaSecundaria j3 = null;
     }
       
       private void informe(int nn){
-//          jLabel2.setText("<html><b>" + nn + "</b> localizações aleatórias geradas com êxito.</html>");
           logaux=( "Operação de geramento: "+nn + " localizações aleatórias geradas com êxito. \n\n");
           logcontent=logcontent+logaux;  
           jTextArea3.setText(logcontent);
       }
       
-    
-      
-   
-    
+      private boolean ChecadorNull(long[] a){
+            if (a.length ==0){
+            JOptionPane.showMessageDialog(this,"Não existem valores a serem ordenados.",
+            "ERRO: Ordenação",JOptionPane.ERROR_MESSAGE);
+                return false;}
+            else{
+            return true;
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -1236,14 +1078,526 @@ private JanelaSecundaria j3 = null;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -1760,7 +2114,7 @@ private JanelaSecundaria j3 = null;
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new tela().setVisible(true);
+                new Tela().setVisible(true);
                 
             }
         });
