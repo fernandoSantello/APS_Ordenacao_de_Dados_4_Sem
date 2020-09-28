@@ -969,7 +969,6 @@ public class Tela extends javax.swing.JFrame {
         }
     }
    
-   
    private Long[] importData() {
         try {
             String filename = openFile("Arquivos TXT", "txt");
