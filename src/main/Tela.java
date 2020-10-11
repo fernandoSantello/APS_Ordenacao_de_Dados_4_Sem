@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.Duration;
 import util.*;
 import sort.*;
 import java.util.Date;
@@ -650,11 +651,11 @@ public class Tela extends javax.swing.JFrame {
         bmm.reset();
         BubbleSort.sort(SET);
         bmm.setElapsed();
-       log(bmm, "BUBBLE SORT");
+        log(bmm, "BUBBLE SORT");
        OrderCP();
         }
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         if (ChecadorNull(SET)==false){
         }else{
@@ -663,6 +664,7 @@ public class Tela extends javax.swing.JFrame {
         HeapSort.sort(SET);
         bmm.setElapsed();
        log(bmm, "HEAP SORT");
+      
        OrderCP();
         }
     }//GEN-LAST:event_jButton3ActionPerformed
