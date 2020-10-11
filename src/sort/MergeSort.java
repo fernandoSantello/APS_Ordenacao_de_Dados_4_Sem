@@ -7,8 +7,10 @@ package sort;
 
 /**
  *
- * @author ferna
+ * @author Fernando Santello
  */
+
+//Classe que realiza o Merge Sort
 public class MergeSort {
 
 	public static void sort(long[] v) {

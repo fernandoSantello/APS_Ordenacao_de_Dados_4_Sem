@@ -7,8 +7,10 @@ package sort;
 
 /**
  *
- * @author ferna
+ * @author Fernando Santello
  */
+
+//Classe que realiza o Insertion Sort
 public class InsertionSort {
 	public static void sort(long[] v) {
 		int i, j, n = v.length;

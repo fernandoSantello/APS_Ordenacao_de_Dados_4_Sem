@@ -7,10 +7,11 @@ package sort;
 
 /**
  *
- * @author ferna
+ * @author Fernando Santello
  */
 import util.Util;
 
+//Classe que realiza o Quick Sort
 public class QuickSort {
 	private static int i;
 	private static int j;

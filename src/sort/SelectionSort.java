@@ -7,10 +7,11 @@ package sort;
 
 /**
  *
- * @author ferna
+ * @author Fernando Santello
  */
 import util.Util;
 
+//Classe que realiza o Selection Sort
 public class SelectionSort {
 	public static void sort(long[] v) {
 		int i, j, min, n = v.length;

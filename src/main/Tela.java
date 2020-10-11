@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package main;
+//Importação de pacotes necessários
 import java.awt.Color; 
 import static java.awt.Color.black;
 import static java.awt.Color.white;
@@ -13,7 +14,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.Duration;
 import util.*;
 import sort.*;
 import java.util.Date;
@@ -24,14 +24,15 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author ferna
+ * @author Fernando Santello
  */
 
 public class Tela extends javax.swing.JFrame {
+        //Criação dos atributos da classe.
         DefaultListModel listModel;
         private static long[] SET = {  };
-         String logaux="", logcontent="";
-         long w,g;
+        String logaux="", logcontent="";
+        long w,g;
         
     /**
      * Creates new form tela
@@ -618,180 +619,269 @@ public class Tela extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
+    //Botão do Quick Sort
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       //Chama o método que vê se o array SET, que é o array a ser organizado, está nulo
         if (ChecadorNull(SET)==false){ 
         }else{
+        //Se não estiver, cria um BenchMark pra medir o tempo
         BenchMark bmm = new BenchMark();
         bmm.reset();
+        //Realiza o Quick Sort com o array preenchido
         QuickSort.sort(SET);
         bmm.setElapsed();
+        //Chama o método que é exibido no LOG, com o tempo armazenado por bmm e o nome do sort
         log(bmm, "QUICK SORT");
+        //Chama o método que preenche a JTextArea2 com o array organizado
         OrderCP();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-
     
-    
+    //Botão do Merge Sort
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       //Chama o método que vê se o array SET, que é o array a ser organizado, está nulo
         if (ChecadorNull(SET)==false){
         }else{
+        //Se não estiver, cria um BenchMark pra medir o tempo
         BenchMark bmm = new BenchMark();
         bmm.reset();
+        //Realiza o Merge Sort com o array preenchido
         MergeSort.sort(SET);
         bmm.setElapsed();
-       log(bmm, "MERGE SORT");
-       OrderCP();
+        //Chama o método que é exibido no LOG, com o tempo armazenado por bmm e o nome do sort
+        log(bmm, "MERGE SORT");
+        //Chama o método que preenche a JTextArea2 com o array organizado
+        OrderCP();
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    //Botão do Bubble Sort
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        //Chama o método que vê se o array SET, que é o array a ser organizado, está nulo
         if (ChecadorNull(SET)==false){
         }else{
+        //Se não estiver, cria um BenchMark pra medir o tempo
         BenchMark bmm = new BenchMark();
         bmm.reset();
+        //Realiza o Bubble Sort com o array preenchido
         BubbleSort.sort(SET);
         bmm.setElapsed();
+        //Chama o método que é exibido no LOG, com o tempo armazenado por bmm e o nome do sort
         log(bmm, "BUBBLE SORT");
-       OrderCP();
+        //Chama o método que preenche a JTextArea2 com o array organizado
+        OrderCP();
         }
     }//GEN-LAST:event_jButton2ActionPerformed
     
+    //Botão do Heap Sort
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        //Chama o método que vê se o array SET, que é o array a ser organizado, está nulo
         if (ChecadorNull(SET)==false){
         }else{
+        //Se não estiver, cria um BenchMark pra medir o tempo
         BenchMark bmm = new BenchMark();
         bmm.reset();
+        //Realiza o Heap Sort com o array preenchido
         HeapSort.sort(SET);
         bmm.setElapsed();
-       log(bmm, "HEAP SORT");
-      
-       OrderCP();
+        //Chama o método que é exibido no LOG, com o tempo armazenado por bmm e o nome do sort
+        log(bmm, "HEAP SORT");
+        //Chama o método que preenche a JTextArea2 com o array organizado
+        OrderCP();
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    //Botão do Selection Sort
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        //Chama o método que vê se o array SET, que é o array a ser organizado, está nulo
         if (ChecadorNull(SET)==false){
         }else{
+        //Se não estiver, cria um BenchMark pra medir o tempo
         BenchMark bmm = new BenchMark();
         bmm.reset();
+        //Realiza o Selection Sort com o array preenchido
         SelectionSort.sort(SET);
         bmm.setElapsed();
-       log(bmm, "SELECTION SORT");
-       OrderCP();
+        //Chama o método que é exibido no LOG, com o tempo armazenado por bmm e o nome do sort
+        log(bmm, "SELECTION SORT");
+        //Chama o método que preenche a JTextArea2 com o array organizado
+        OrderCP();
         }
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    //Botão do Shell Sort
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         if (ChecadorNull(SET)==false){  
         }else{
+        //Se não estiver, cria um BenchMark pra medir o tempo
         BenchMark bmm = new BenchMark();
         bmm.reset();
+        //Realiza o Shell Sort com o array preenchido
         ShellSort.sort(SET);
         bmm.setElapsed();
-       log(bmm, "SHELL SORT");
-       OrderCP();
+        //Chama o método que é exibido no LOG, com o tempo armazenado por bmm e o nome do sort
+        log(bmm, "SHELL SORT");
+        //Chama o método que preenche a JTextArea2 com o array organizado
+        OrderCP();
         }
     }//GEN-LAST:event_jButton7ActionPerformed
-
+    
+    //Botão do Insertion Sort
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         if (ChecadorNull(SET)==false){  
         }else{
+        //Se não estiver, cria um BenchMark pra medir o tempo
         BenchMark bmm = new BenchMark();
         bmm.reset();
+        //Realiza o Insertion Sort com o array preenchido
         InsertionSort.sort(SET);
         bmm.setElapsed();
+        //Chama o método que é exibido no LOG, com o tempo armazenado por bmm e o nome do sort
         log(bmm, "INSERTION SORT");
+        //Chama o método que preenche a JTextArea2 com o array organizado
         OrderCP();
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    //Botão para gerar 10 números aleatórios com latitude X e longitude Y dentro da Amazônia Legal
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        //Chama o gerador com 10 números
         SET=generateNumberArray (10,-1.074055,-9.309178,-69.607934,-46.202623);
+        //Coloca o array gerado na JTextArea1
         Order();
+        //Gera as informações a serem colocadas no LOG, com o número 10
         informe(10);
     }//GEN-LAST:event_jButton8ActionPerformed
 
+    //Botão para gerar 100 números aleatórios com latitude X e longitude Y dentro da Amazônia Legal
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        //Chama o gerador com 100 números
         SET=generateNumberArray (100,-1.074055,-9.309178,-69.607934,-46.202623);
+        //Coloca o array gerado na JTextArea1
         Order();
+        //Gera as informações a serem colocadas no LOG, com o número 100
         informe(100);
     }//GEN-LAST:event_jButton9ActionPerformed
 
+    //Botão para gerar 500 números aleatórios com latitude X e longitude Y dentro da Amazônia Legal
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        //Chama o gerador com 500 números
         SET=generateNumberArray (500,-1.074055,-9.309178,-69.607934,-46.202623);
+        //Coloca o array gerado na JTextArea1
         Order();
-        informe(500);        
-        
+        //Gera as informações a serem colocadas no LOG, com o número 500
+        informe(500);         
     }//GEN-LAST:event_jButton10ActionPerformed
 
+    //Botão para gerar 10.000 números aleatórios com latitude X e longitude Y dentro da Amazônia Legal
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        //Chama o gerador com 10.000 números
         SET=generateNumberArray (10000,-1.074055,-9.309178,-69.607934,-46.202623);
+        //Coloca o array gerado na JTextArea1
         Order();
+        //Gera as informações a serem colocadas no LOG, com o número 10.000
         informe(10000);
-        
     }//GEN-LAST:event_jButton11ActionPerformed
 
+    //Botão para gerar 100.000 números aleatórios com latitude X e longitude Y dentro da Amazônia Legal
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        //Chama o gerador com 100.000 números
         SET=generateNumberArray (100000,-1.074055,-9.309178,-69.607934,-46.202623);
+        //Coloca o array gerado na JTextArea1
         Order();
+        //Gera as informações a serem colocadas no LOG, com o número 100.000
         informe(100000);
         
     }//GEN-LAST:event_jButton12ActionPerformed
-
+   
+    //Botão para exportar o conteúdo da JTextArea2
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        //Serve para checar se o JTextArea2 está vazio, para que não seja exportado um arquivo vazio
         if (jTextArea2.getText().trim().length() == 0){
+            //Se estiver vazio, ele não exporta e exibe uma mensagem para o usuário
             JOptionPane.showMessageDialog(this,"O campo selecionado para exportação está vazio.",
             "ERRO: Exportação de arquivo",JOptionPane.ERROR_MESSAGE);             
         }else{
+        //Se não estiver vazio, chama o método exportador e exporta o conteúdo da JTextArea2
         exportData(jTextArea2.getText());}
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    //Botão para exportar o conteúdo da JTextArea3
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        //Serve para checar se o JTextArea3 está vazio, para que não seja exportado um arquivo vazio
         if (jTextArea3.getText().trim().length() == 0){
+            //Se estiver vazio, ele não exporta e exibe uma mensagem para o usuário
             JOptionPane.showMessageDialog(this,"O campo selecionado para exportação está vazio.",
             "ERRO: Exportação de arquivo",JOptionPane.ERROR_MESSAGE);           
         }else{
+        //Se não estiver vazio, chama o método exportador e exporta o conteúdo da JTextArea3
         exportData(jTextArea3.getText());}
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    //Botão para realizar a importação de um arquivo de texto para o array SET e a jTextArea1
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        //Gera um array vazio para realizar a importação do array novo
         SET=generateNumberArray (0,0,0,0,0);
+        //Chama o método responsável por realizar a importação
         importData();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
+    //Botão para apagar o conteúdo da JTextArea1 e zerar o array.
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        //Retira todo o conteúdo da JTextArea1, que mostra as localizações desordenadas
         jTextArea1.setText(null);
+        //Gera um array nulo para sobrepor o array anterior
         SET=generateNumberArray (0,0,0,0,0);
     }//GEN-LAST:event_jButton13ActionPerformed
 
+    //Botão para apagar o conteúdp da JTextArea2
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        //Retira todo o conteúdo da JTextArea2 que mostra as localizações ordenadas.
+        //Aqui não tem a necessidade de gerar um array nulo, porque é a tela de resultado
         jTextArea2.setText(null); 
     }//GEN-LAST:event_jButton14ActionPerformed
 
+    //Botão para apagar o conteúdp da JTextArea3 e zerar o atributo responsável por armazenamento do LOG
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        jTextArea3.setText(null); 
+        //Retira todo o conteúdo da JTextArea3, o LOG
+        jTextArea3.setText(null);
+        //Deixa o atributo responsável por armazenar o contúdo do LOG nula, para que valores novos não exibam os antigos
         logcontent="";
     }//GEN-LAST:event_jButton15ActionPerformed
-
+  
+    //Botão para gerar 50 números aleatórios com latitude X e longitude Y dentro da Amazônia Legal
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        //Chama o gerador com 50 números
         SET=generateNumberArray (50,-1.074055,-9.309178,-69.607934,-46.202623);
+        //Coloca o array gerado na JTextArea1
         Order();
+        //Gera as informações a serem colocadas no LOG, com o número 50
         informe(50);
     }//GEN-LAST:event_jButton16ActionPerformed
 
+    //Botão para gerar 1.000 números aleatórios com latitude X e longitude Y dentro da Amazônia Legal
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        //Chama o gerador com 1.000 números
         SET=generateNumberArray (1000,-1.074055,-9.309178,-69.607934,-46.202623);
+        //Coloca o array gerado na JTextArea1
         Order();
+        //Gera as informações a serem colocadas no LOG, com o número 1.000
         informe(1000);
     }//GEN-LAST:event_jButton17ActionPerformed
 
+    //Botão para gerar 5.000 números aleatórios com latitude X e longitude Y dentro da Amazônia Legal
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-         SET=generateNumberArray (5000,-1.074055,-9.309178,-69.607934,-46.202623);
+        //Chama o gerador com 5.000 números
+        SET=generateNumberArray (5000,-1.074055,-9.309178,-69.607934,-46.202623);
+        //Coloca o array gerado na JTextArea1
         Order();
+        //Gera as informações a serem colocadas no LOG, com o número 5.000
         informe(5000);
     }//GEN-LAST:event_jButton18ActionPerformed
  
+    //Botão para colocar a U.I no Tema Noturno
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        //Muda a cor de todos os os componentes da tela, para criar o Tema Noturno
         jPanel1.setBackground(new Color(20, 19, 19));
         jLabel6.setForeground(white);
         jLabel4.setForeground(white);
@@ -852,7 +942,9 @@ public class Tela extends javax.swing.JFrame {
         jTextField1.setForeground(white);   
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
+    //Botão para colocar a U.I no Tema Padrão
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        //Muda a cor de todos os componentes da tela, para criar o Tema Padrão
         jPanel1.setBackground(new Color(255,204,102));
         jLabel6.setForeground(black);
         jLabel4.setForeground(black);
@@ -913,23 +1005,34 @@ public class Tela extends javax.swing.JFrame {
         jTextField1.setForeground(black);    
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
+    //Botão para exportar o conteúdo da JTextArea1
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-       if (jTextArea1.getText().trim().length() == 0){
+       //Serve para checar se o JTextArea1 está vazio, para que não seja exportado um arquivo vazio
+        if (jTextArea1.getText().trim().length() == 0){
+            //Se estiver vazio, ele não exporta e exibe uma mensagem para o usuário
             JOptionPane.showMessageDialog(this,"O campo selecionado para exportação está vazio.",
             "ERRO: Exportação de arquivo",JOptionPane.ERROR_MESSAGE);         
         }else{
+        //Se não estiver vazio, chama o método exportador e exporta o conteúdo da JTextArea1
         exportData(jTextArea1.getText());}
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+    
     private Info info = null;
+    //Botão para exibir a tela de informações
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-         if (info == null) {
+        //Cria e exibe a tela de informações 
+        if (info == null) {
             info = new Info(this);}
-        info.setVisible(true);    
+            info.setVisible(true);    
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
+    //Botão para gerar 1.000.000 números aleatórios com latitude X e longitude Y dentro da Amazônia Legal
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        //Chama o gerador com 1.000.000 números
         SET=generateNumberArray (1000000,-1.074055,-9.309178,-69.607934,-46.202623);
+        //Coloca o array gerado na JTextArea1
         Order();
+        //Gera as informções a serem colocadas no LOG, com o número 1.000.000
         informe(1000000);
     }//GEN-LAST:event_jButton20ActionPerformed
 
@@ -937,171 +1040,258 @@ public class Tela extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    //Botão para gerar a quantidade de localizações desejadas pelo usuário
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        try{
+       try{
+       //Checa se o campo de inserção está vazio
        String a=jTextField1.getText();
        if (a.isEmpty()){
+           //Se estiver, exibe uma mensagem para o usuário
            JOptionPane.showMessageDialog(this,"O campo está vazio.",
            "ERRO: Geração personalizada",JOptionPane.WARNING_MESSAGE);
+           jTextField1.requestFocus();
            return;  
        }
+       //Transforma o valor inserido em int
        int b = Integer.parseInt(a);
+       //Checa se o valor a ser gerado é inferior a 1.000.000. O programa pode gerar tranquilamente quantidades maiores se esse if for removido,
+       //mas para manter o controle esse número máximo foi determinado. Pode tirar se quiser testar professor.
        if (b>1000000){
-         JOptionPane.showMessageDialog(this,"A função de quantidade personalizada só permite valores iguais ou inferiores a 100.000",
+         //Se o número inserido for maior que o número máximo determinado, exibe uma mensagem e fala pro usuário.
+         JOptionPane.showMessageDialog(this,"A função de quantidade personalizada só permite valores iguais ou inferiores a 1.000.000",
          "ERRO: Geração personalizada",JOptionPane.ERROR_MESSAGE);
             jTextField1.setText("");
             jTextField1.requestFocus();
-         return;
+            return;
        }
+       //Chama o gerador pra gerar localizações de acordo com a quantidade de números inserida pelo usuário
        SET=generateNumberArray (b,-1.074055,-9.309178,-69.607934,-46.202623);
+       //Coloca o conteúdo na JTextArea1
        Order();
+       //Realiza o informe no LOG com a quantidade de números inserida
        informe(b);
        }catch (NumberFormatException ex) {
+           //Se o valor inserido pelo usuário for letras ou um valor não inteiro, exibe uma mensagem apra o usuário
            JOptionPane.showMessageDialog(this,"O campo só aceita numerais inteiros. Por favor insira valores numéricos inteiros!",
            "ERRO: Geração personalizada",JOptionPane.ERROR_MESSAGE);
            jTextField1.setText("");
            jTextField1.requestFocus();
         }                                                                                  
     }
+    
+    //Método que cria um novo objeto gerador de localizações
     public static long[] generateNumberArray(int size, double minX, double maxX, double minY, double maxY) {
         RandomNumberGenerator rng = new RandomNumberGenerator();
+        //Faz a geração de acordo com os parâmetros inseridos
         return rng.genRandomNumberArray(size, minX, maxX, minY, maxY);
     }
     
+    //Método que escreve o conteúdo no LOG
     private void log(BenchMark bmm, String TypeofSort){
        logaux=("Ordenação realizada em: " +"[ " + new Date() + " |  "+TypeofSort+ "] Array com " + SET.length + 
        " localizações. Duração total: " + bmm.getElapsed() + " milissegundos.\n\n");
+       //Realiza a soma das strings. Não é o ideal, mas como o LOG geralmente não vai ter muito conteúdo, 
+       //é possível fazer assim
        logcontent=logcontent+logaux;  
        jTextArea3.setText(logcontent);
     }
     
+    //Método responsável pela escrita de conteúdo na JTextArea1, que tem como conteúdo o array desorganizado
      private void Order(){
-        StringBuilder result = new StringBuilder();
-       jTextArea2.setText(null);   
+       //Cria um StringBuilder
+       StringBuilder result = new StringBuilder();
+       //Apaga o conteúdo prévio da JTextArea2
+       jTextArea2.setText(null);
+       //For que usa o atributo "j" para realizar a contagem de acordo com o tamanho do array SET,
+       //para que todos os números sejam armazenados
        for (int j = 0; j < SET.length; j++) {
+           //Coloca no StringBuilder criado o valor string do número "j" do array, e pula uma linha
            result.append(String.valueOf(String.valueOf(SET[j])+"\n"));    
         }
+       //Quando acaba, converte o o StringBuilder para string
        String singleString = result.toString();
+       //Coloca o conteúdo do String da JTextArea1
        jTextArea1.setText(singleString);
     }
   
+     //Método responsável pela escrita de conteúdo na JTextArea1, que tem como conteúdo o array organizado
      private void OrderCP(){
+       //Cria um StringBuilder
        StringBuilder result = new StringBuilder();
+       //Apaga o conteúdo prévio da JTextArea2
        jTextArea2.setText(null);   
+       //For que usa o atributo "j" para realizar a contagem de acordo com o tamanho do array SET,
+       //para que todos os números sejam armazenados
        for (int j = 0; j < SET.length; j++) {
            result.append(String.valueOf(String.valueOf(SET[j])+"\n"));    
         }
+       //Quando acaba, converte o o StringBuilder para string
        String singleString = result.toString();
+       //Coloca o conteúdo do String da JTextArea2
        jTextArea2.setText(singleString);
     }
    
-   
-   private void exportData(String listModel) {
-        FileWriter exp;
+   //Método responsável pela exportação de dados
+   private void exportData(String content) {
+       //Cria FileWriter 
+       FileWriter exp;
         try {
+            //Determina o conteúdo a ser salvo para o usuário e a terminação txt
             String filename = saveFile("Arquivos TXT", "txt");
             exp= new FileWriter(filename);
-            exp.write(listModel);
+            //Escreve o conteúdo, salvando o arquivo
+            exp.write(content);
+            //Encerra o FileWriter
             exp.close();
+            //Exibe no LOG onde o conteúdo foi salvo
             logaux=("Exportado com sucesso para: " + filename +"\n\n" );
             logcontent=logcontent+logaux;  
             jTextArea3.setText(logcontent);     
         } catch (IOException |NullPointerException ex) {
+            //Caso o destino não for selecionado e a operação cancelada, exibe uma mensagem para
+            //o usuário informando isso
             JOptionPane.showMessageDialog(this,"Destino não selecionado. Operação de exportação não realizada.",
             "ERRO: Exportação de arquivo",JOptionPane.ERROR_MESSAGE);
         }
     }
    
+   
+   //Método responsável pela importação de arquivos. Esse foi complexo de fazer certinho com todos os erros professor
    private Long[] importData() {
         try {
+            //Abre a tela para que o usuário selecione o arquivo a ser importado e salve em string o lugar
             String filename = openFile("Arquivos TXT", "txt");
-            String b="s ";
+            //Abre o arquivo com a string do lugar salvo anteriormente
             Path path = Paths.get(filename);
+            //Lista para ler todas as linhas da path selecionado
             List<String> lines = Files.readAllLines(path);
             if (lines.isEmpty()){
+                //Caso o arquivo esteja vazio, exibe uma mensagem para o usuário
                 JOptionPane.showMessageDialog(this,"O arquivo selecionado para importação está vazio!.",
                 "ERRO: Importação de arquivo",JOptionPane.ERROR_MESSAGE);
             }
+            //Cria o StringBuilder para armazenar o conteúdo, junto com um array long
             StringBuilder result = new StringBuilder();
             Long[] spl = new Long[]{};
+            //For para ler todas as linhas da lista
                 for (String line : lines) {
                 try {
+                    //Adiciona o conteúdo ao StringBuilder, e pula uma linha
                     result.append(line); 
-                    result.append("\n"); 
+                    result.append("\n");
+                    //Pega o conteúdo long da linha que está sendo lida no momento
                     g = Long.valueOf(line);
                 } catch (NumberFormatException ex) {
+                    //Se a linha possuir conteúdo não numérico, exibe uma mensagem para o usuário e para a operação
                     JOptionPane.showMessageDialog(this,"O arquivo selecionado possui conteúdo não numérico.",
                    "ERRO: Importação de arquivo",JOptionPane.ERROR_MESSAGE);
                     result.setLength(0);
                     break;
                 }
+                //Variáveis auxiliares para as operações seguintes 
                 int n = SET.length;
                 long f=g; 
+                //Chama o método addX, que é responsável por adicionar o valor de f no array SET. Assim ele vai sempre
+                //adcionando o último valor lido no array, até os valores acabarem
                 SET = addX(n, SET, f);            
             }
+            //Transforma o StringBuilder em String
             String singleString = result.toString();
+            //Coloca a string criada na JTextArea1
             jTextArea1.setText(singleString); 
-            if (g>0||result.length()>0){  
+            //Se o tamanho da String for maior que 0, significa que o array não está vazio. Ai ele realiza as operações
+            if (g>0||result.length()>0){ 
+            //Adiciona ao LOG o lugar de onde o arquivo foi importado
             logaux=(filename + " foi importado com sucesso!" + "\n\n" );
             logcontent=logcontent+logaux;  
             jTextArea3.setText(logcontent);
+            //Retorna o array
             return spl;
             }
-         } catch (IOException |NullPointerException ex) {
-            JOptionPane.showMessageDialog(this,"Arquivo não selecionado. Operação de importação não realizada.",
-            "ERRO: Importação de arquivo",JOptionPane.ERROR_MESSAGE);
+             } catch (IOException |NullPointerException ex) {
+                 //Caso o local do arquivo não seja selecionado, exibe uma mensagem para o usuário não realizando a operação
+                JOptionPane.showMessageDialog(this,"Arquivo não selecionado. Operação de importação não realizada.",
+                "ERRO: Importação de arquivo",JOptionPane.ERROR_MESSAGE);
+             }
+          //Retorna um array nulo caso a operação falhe
+          return null;
         }
-        return null;
-    }
-   
-   public static long[] addX ( int n, long arr[], long x) 
+    
+   //Responsável por adicionar elementos dinamicamente no array
+   public static long[] addX (int n, long arr[], long x) 
     { 
         int i; 
+        //Array novo com o tamanho de SET + 1
         long ne[] = new long [n + 1]; 
         for (i = 0; i < n; i++) 
-            ne[i] = arr[i]; 
+            //Copia o Array SET para o  Array ne
+            ne[i] = arr[i];
+            //Adiciona o número passado como parâmetro na última posição
              ne[n] = x; 
+        //Retorna o array com um elemento novo adicionado no final
         return ne; 
     }   
    
+   //Método para abrir o arquivo
    private String openFile(String desc, String ext) {
+        //Cria um JFileChooser browseFile, que recebe a descrição Arquivos TXT e a terminação txt como parâmetros
         JFileChooser fc = browseFile(desc, ext);
+        //Coloca conteúdo ja JLabel3, para informar o usuário que uma operação está acontecendo. Em operações
+        //de importação curtas, o procedimento é tão rápido que nem se da para ver isso
         jLabel3.setText("Importando arquivo. Por favor aguarde...");
         if (fc.showOpenDialog(new javax.swing.JButton()) == JFileChooser.APPROVE_OPTION) {
+            //Se tudo der certo, apaga o conteúdo da jLabel3 e retorna a path do arquivo
             jLabel3.setText(null);
             return fc.getSelectedFile().getAbsolutePath();
         } else jLabel3.setText(null);
+            //Se não der, simplesmente apaga o conteúdo da JLabel3. O tratamento de possíveis erros é feito em outros lugares
             return null;
     }
 
+      //Responsável por salvar arquivos
       private String saveFile(String desc, String ext) {
+          //Cria um JFileChooser com browseFile
         JFileChooser fc = browseFile(desc, ext);
+        //Cria nova file com a terminação .txt
         fc.setSelectedFile(new File("." + ext));
         if (fc.showSaveDialog(new javax.swing.JButton()) == JFileChooser.APPROVE_OPTION) {
+            //Se der certo retorna a path do arquivo
             return fc.getSelectedFile().getAbsolutePath();
+        //Se não der, retorna null. O tratamento de possíveis erros é feito em outros lugares
         } else return null;
     }
       
+      //Cria o browseFile, que é a tela de selecionar arquivos
       private javax.swing.JFileChooser browseFile(String desc, String ext) {
         JFileChooser fc = new JFileChooser();
+        //Abre ela no diretório atual
         fc.setCurrentDirectory(new java.io.File("."));
+        //Texto que aparece para orientação
         fc.setDialogTitle("Selecione o arquivo...");
         fc.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter(desc, ext));
+        //Retorna o JFileChooser
         return fc;
     }
       
+      //Realiza o informe das operações de geramento, recebendo o parâmetros int nn
       private void informe(int nn){
+          //Mostra quantos números o array possui, e consequentemente quantos foram ordenados.
           logaux=( "Operação de geramento: "+nn + " localizações aleatórias geradas com êxito. \n\n");
           logcontent=logcontent+logaux;  
           jTextArea3.setText(logcontent);
       }
       
+      //Método para checar se o array esta vazio antes de realizar a ordenação
       private boolean ChecadorNull(long[] a){
+            //Checa se o array SET está vazio
             if (a.length ==0){
+            //Se estiver, exibe uma mensagem para o usuário
             JOptionPane.showMessageDialog(this,"Não existem valores a serem ordenados.",
             "ERRO: Ordenação",JOptionPane.ERROR_MESSAGE);
-                return false;}
-            else{
+                //Retorna false, que é usado no if dos botões de geração
+                return false;
+            }else {
+            //Retorna true, que é usado no if dos botões de geração
             return true;
         }
     }
@@ -2156,7 +2346,7 @@ public class Tela extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
-        /* Create and display the form */
+        //Cria a tela e a torna visível
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Tela().setVisible(true);

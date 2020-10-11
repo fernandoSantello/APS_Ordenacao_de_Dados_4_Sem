@@ -7,10 +7,11 @@ package sort;
 
 /**
  *
- * @author ferna
+ * @author Fernando Santello
  */
 import util.Util;
 
+//Clase que realiza o HeapSort
 public class HeapSort {
 	public static void sort(long[] v) {
 		int n = v.length, i;

@@ -7,7 +7,7 @@ package main;
 
 /**
  *
- * @author ferna
+ * @author Fernando Santello
  */
 public class Info extends javax.swing.JFrame {
 
@@ -15,6 +15,7 @@ public class Info extends javax.swing.JFrame {
     /**
      * Creates new form JanelaSecundariaAtiva
      */
+    //Pega o daddy dessa tela, para realizar a intercalação entre as duas
     public Info(Tela daddy) {
         initComponents();
         this.daddy = daddy;

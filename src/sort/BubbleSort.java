@@ -7,10 +7,11 @@ package sort;
 
 /**
  *
- * @author ferna
+ * @author Fernando Santello
  */
 import util.Util;
 
+//Classe que realiza o Bubble Sort
 public class BubbleSort {
 	public static void sort(long[] v) {
 		int i, j, n = v.length;
