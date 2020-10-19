@@ -187,12 +187,6 @@ public class Tela extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         jLabel8.setText("Quantidade personalizada:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
         jButton19.setBackground(new java.awt.Color(255, 255, 255));
         jButton19.setFont(new java.awt.Font("Sitka Text", 0, 18)); // NOI18N
         jButton19.setText("Gerar");
@@ -1036,10 +1030,6 @@ public class Tela extends javax.swing.JFrame {
         informe(1000000);
     }//GEN-LAST:event_jButton20ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     //Botão para gerar a quantidade de localizações desejadas pelo usuário
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {                                          
        try{
@@ -1088,12 +1078,13 @@ public class Tela extends javax.swing.JFrame {
     
     //Método que escreve o conteúdo no LOG
     private void log(BenchMark bmm, String TypeofSort){
-       logaux=("Ordenação realizada em: " +"[ " + new Date() + " |  "+TypeofSort+ "] Array com " + SET.length + 
-       " localizações. Duração total: " + bmm.getElapsed() + " milissegundos.\n\n");
+       logaux=("Ordenação realizada em: " +"[ " + new Date() + " |  "+TypeofSort+ "]\nArray com " + SET.length + 
+       " localizações. Duração total: " + bmm.getElapsed() + " milisegundos.\n\n");
        //Realiza a soma das strings. Não é o ideal, mas como o LOG geralmente não vai ter muito conteúdo, 
        //é possível fazer assim
        logcontent=logcontent+logaux;  
        jTextArea3.setText(logcontent);
+       
     }
     
     //Método responsável pela escrita de conteúdo na JTextArea1, que tem como conteúdo o array desorganizado
@@ -1200,7 +1191,8 @@ public class Tela extends javax.swing.JFrame {
             //Coloca a string criada na JTextArea1
             jTextArea1.setText(singleString); 
             //Se o tamanho da String for maior que 0, significa que o array não está vazio. Ai ele realiza as operações
-            if (g>0||result.length()>0){ 
+            //g>0||
+            if (result.length()>0){ 
             //Adiciona ao LOG o lugar de onde o arquivo foi importado
             logaux=(filename + " foi importado com sucesso!" + "\n\n" );
             logcontent=logcontent+logaux;  

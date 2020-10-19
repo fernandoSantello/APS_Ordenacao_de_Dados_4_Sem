@@ -22,7 +22,8 @@ public class RandomNumberGenerator {
         return cut;
     }
     //Os dois métodos acima são parecidos mas tem tamanhos diferentes. De acordo com a localização da Amazônia Legal,
-    //as coordenadas indicam que X tem geralmente 7 dígitos e Y oito dígitos
+    //as coordenadas indicam que X tem geralmente 7 dígitos e Y oito dígitos. Esses números podem ser menores se tiverem
+    //muitos 0 a toa por exemplo, mas mesmo assim continuam dentro das coordenadas desejadas
     
 
 Random rand = new Random();
@@ -76,8 +77,8 @@ Random rand = new Random();
                     xt = String.valueOf(String.valueOf(x));
                 }while (xt.contains("E"));
                 //Se X for maior que zero, ele é positivo, o que faz com que o "1" seja concatenado na frente do valor de X para representar o sinal,
-                //como explicado logo acima. Essa parte na verdade não é necessária, porque X sempre vai sser gerado denrto da Amazônia Legal, e ela
-                //está numa localização do globo onde sua longitude e latitude sempre serão negativas. Mas como o programa pode posteriormente ser
+                //como explicado logo acima. Essa parte na verdade não é necessária, porque X e Y sempre serão gerados dentro da Amazônia Legal, 
+                //e ela está numa localização do globo onde sua longitude e latitude sempre serão negativas. Mas como o programa pode posteriormente ser
                 //alterado para gerar localizações de outros lugares, esse if é mantido
                 if (x>0){
                      x1 = String.valueOf(String.valueOf(a) +String.valueOf(x));
@@ -110,7 +111,7 @@ Random rand = new Random();
                 //System.out.println("y: "+y);
                 //System.out.println("x1: "+x1);
                 //System.out.println("y1: "+y1);
-                //System.out.println("x1 e y1 oncatenados: "+st);
+                //System.out.println("x1 e y1 concatenados: "+st);
                 //Converte a string que contém a localização para long, que é o tipo de dado ideal para a situação
                 long res = Long.valueOf(st);
                 //Adiciona a localização long no array

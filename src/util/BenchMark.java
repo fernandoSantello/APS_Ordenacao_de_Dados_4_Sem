@@ -28,7 +28,7 @@ public class BenchMark {
     
     // Método para realizar a conta de milisegundos entre o momento atual e o momento armazenado em start
     public double setElapsed() {
-        this.elapsed = ((double)System.nanoTime() - this.start) / 1000000;
+        this.elapsed = ((double)System.nanoTime() - this.start)/ 1E6;
         //Retorna o valor da operação
         return elapsed;
     }

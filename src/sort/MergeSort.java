@@ -5,49 +5,60 @@
  */
 package sort;
 
-/**
- *
- * @author Fernando Santello
- */
-
 //Classe que realiza o Merge Sort
 public class MergeSort {
 
-	public static void sort(long[] v) {
-		mergeSort(v, 0, v.length - 1);
-	}
+	public static void sort(long a[]) {
+    if (a.length < 2)
+        return;
+    long []b = new long[a.length];
+    MergeSortAtoA(a, b, 0, a.length);
+}
 
-	private static void mergeSort(long[] v, int low, int high) {
-		if (low < high) {
-			int middle = (low + high) / 2;
-			mergeSort(v, low, middle);
-			mergeSort(v, middle + 1, high);
-			merge(v, low, middle, high);
-		}
-	}
+private static void MergeSortAtoA(long a[], long b[], int ll, int ee)
+{
+    if (ee - ll > 1) {
+        int rr = (ll + ee)>>1;          
+        MergeSortAtoB(a, b, ll, rr);
+        MergeSortAtoB(a, b, rr, ee);
+        Merge(b, a, ll, rr, ee);        
+    }
+}
 
-	private static void merge(long[] v, int low, int middle, int high) {
-		long[] vAux = new long[v.length];
-		for (int i = low; i <= high; i++) {
-			vAux[i] = v[i];
-		}
-		int i = low;
-		int j = middle + 1;
-		int k = low;
-		while (i <= middle && j <= high) {
-			if (vAux[i] <= vAux[j]) {
-				v[k] = vAux[i];
-				i++;
-			} else {
-				v[k] = vAux[j];
-				j++;
-			}
-			k++;
-		}
-		while (i <= middle) {
-			v[k] = vAux[i];
-			k++;
-			i++;
-		}
-	}
+private static void MergeSortAtoB(long a[], long b[], int ll, int ee)
+{
+    if (ee - ll > 1) {
+        int rr = (ll + ee)>>1;          
+        MergeSortAtoA(a, b, ll, rr);
+        MergeSortAtoA(a, b, rr, ee);
+        Merge(a, b, ll, rr, ee);        
+    } else if ((ee - ll) == 1) {
+        b[ll] = a[ll];
+    }
+}
+
+private static void Merge(long []a, long []b, int ll, int rr, int ee) {
+    int o = ll;                         
+    int l = ll;                        
+    int r = rr;                        
+    while(true){                        
+        if(a[l] <= a[r]){              
+            b[o++] = a[l++];           
+            if(l < rr)                 
+                continue;              
+            while(r < ee){              
+                b[o++] = a[r++];
+            }
+            break;                     
+        } else {                        
+            b[o++] = a[r++];            
+            if(r < ee)                  
+                continue;               
+            while(l < rr){              
+                b[o++] = a[l++];
+            }
+            break;                     
+        }
+    }
+}
 }
