@@ -1,3 +1,6 @@
+![GitHub User's stars](https://img.shields.io/github/stars/fernandoSantello?style=social) ![GitHub All Releases](https://img.shields.io/github/downloads/fernandoSantello/APS_Ordenacao_de_Dados_4_Sem/total) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/fernandoSantello/APS_Ordenacao_de_Dados_4_Sem)
+
+
 # Ordenador de Dados Lovelace
 ## Um programa que realiza a ordenação de dados usando diferentes métodos.
 
@@ -11,7 +14,7 @@ retirada, para que o programa gere dados aleatórios quaisquer mesmo. O programa
 ele precise ser inserido, e o código está completamente preenchido de comentários explicando o funcionamento, então lendo
 essas explicações fica bem fácil de entender.
 
-![Imagem da Tela Padrão]()
+![Imagem da Tela Padrão](https://github.com/fernandoSantello/APS_Ordenacao_de_Dados_4_Sem/blob/master/IMG%20README/TPPadrao.jpeg)
 
 Os métodos de ordenação desse programa:
 * Bubblse Sort
@@ -42,7 +45,7 @@ Uma coisa bem legal que eu sempre quis fazer em um programa mas nunca deu, é um
 deu pra fazer um direitinho. Da pra mudar pra outras cores, ou adicionar novos modos também. A palheta de cores foi excolhida
 com cores que sem complementam, pra o olho não cansar enquanto se olha pro programa.
 
-![Imagem da Tela Noturna]()
+![Imagem da Tela Noturna](https://github.com/fernandoSantello/APS_Ordenacao_de_Dados_4_Sem/blob/master/IMG%20README/TPNoturna.jpeg)
 
 Bom proveito! Esse programa está com a licença GNU GENERAL PUBLIC LICENSE Version 3, e se surgir uma nova mais aberta, eu venho aqui
 alterar!
