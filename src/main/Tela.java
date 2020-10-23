@@ -100,6 +100,8 @@ public class Tela extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem8 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ordenador de Dados - Lovelace");
@@ -596,6 +598,20 @@ public class Tela extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
+        jMenu5.setText("Projeto");
+        jMenu5.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+
+        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem8.setText("Acessar repositório no GitHub!");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem8);
+
+        jMenuBar1.add(jMenu5);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1030,6 +1046,11 @@ public class Tela extends javax.swing.JFrame {
         informe(1000000);
     }//GEN-LAST:event_jButton20ActionPerformed
 
+    //Botão para acessar o repositório no GitHub com o navegador padrão do computador
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        sitezinho("https://github.com/fernandoSantello/APS_Ordenacao_de_Dados_4_Sem");
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
     //Botão para gerar a quantidade de localizações desejadas pelo usuário
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {                                          
        try{
@@ -1079,7 +1100,7 @@ public class Tela extends javax.swing.JFrame {
     //Método que escreve o conteúdo no LOG
     private void log(BenchMark bmm, String TypeofSort){
        logaux=("Ordenação realizada em: " +"[ " + new Date() + " |  "+TypeofSort+ "]\nArray com " + SET.length + 
-       " localizações. Duração total: " + bmm.getElapsed() + " milisegundos.\n\n");
+       " localizações. Duração total: " + bmm.getElapsed() + " milissegundos.\n\n");
        //Realiza a soma das strings. Não é o ideal, mas como o LOG geralmente não vai ter muito conteúdo, 
        //é possível fazer assim
        logcontent=logcontent+logaux;  
@@ -1285,6 +1306,19 @@ public class Tela extends javax.swing.JFrame {
             }else {
             //Retorna true, que é usado no if dos botões de geração
             return true;
+        }
+    }
+      
+      //Método pra acessar o site com o url fornecido
+      public void sitezinho(String url){
+        try {        
+            //Utiliza método browse junto com o create pra fazer o endereço
+            java.awt.Desktop.getDesktop().browse(java.net.URI.create(url));
+         }
+        catch (java.io.IOException e) {
+            //Caso não seja possível acessar o site fala pro usuário
+            JOptionPane.showMessageDialog(this,"Não foi possível acessar o repositório.",
+            "ERRO: Acesso de repositório",JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -2382,6 +2416,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
@@ -2390,6 +2425,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
