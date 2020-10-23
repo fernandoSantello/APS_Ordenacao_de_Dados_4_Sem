@@ -42,7 +42,7 @@ Esse programa é capaz de:
 * Salvar o LOG de operações para não perder o que foi feito na sessão
 
 Uma coisa bem legal que eu sempre quis fazer em um programa mas nunca deu, é um modo noturno. Mas felizmente nesse projeto
-deu pra fazer um direitinho. Da pra mudar pra outras cores, ou adicionar novos modos também. A palheta de cores foi excolhida
+deu pra fazer um direitinho. Da pra mudar pra outras cores, ou adicionar novos modos também. A palheta de cores foi escolhida
 com cores que sem complementam, pra o olho não cansar enquanto se olha pro programa.
 
 ![Imagem da Tela Noturna](https://github.com/fernandoSantello/APS_Ordenacao_de_Dados_4_Sem/blob/master/IMG%20README/TPNoturna.jpeg)
