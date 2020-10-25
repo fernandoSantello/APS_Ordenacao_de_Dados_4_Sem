@@ -5,10 +5,6 @@
  */
 package sort;
 
-/**
- *
- * @author Fernando Santello
- */
 import util.Util;
 
 //Clase que realiza o HeapSort
@@ -16,7 +12,6 @@ public class HeapSort {
 	public static void sort(long[] v) {
 		int n = v.length, i;
 		int low = n / 2 - 1, high = n - 1;
-		// Build initial heap
 		for (i = low; i >= 0; i--) {
 			heapify(v, i, n);
 		}

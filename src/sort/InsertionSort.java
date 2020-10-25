@@ -5,11 +5,6 @@
  */
 package sort;
 
-/**
- *
- * @author Fernando Santello
- */
-
 //Classe que realiza o Insertion Sort
 public class InsertionSort {
 	public static void sort(long[] v) {

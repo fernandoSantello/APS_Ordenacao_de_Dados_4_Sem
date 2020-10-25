@@ -29,11 +29,15 @@ import javax.swing.JOptionPane;
 
 public class Tela extends javax.swing.JFrame {
         //Criação dos atributos da classe.
-        DefaultListModel listModel;
+   
+        //A estrela principal, o array de todas as operações
         private static long[] SET = {  };
-        String logaux="", logcontent="";
+        //Auxiliares
+        DefaultListModel listModel;
+        String logaux="";
         long w,g;
-        
+        //Controlador de modo da tela de informações
+        static int modo = 0;
     /**
      * Creates new form tela
      */
@@ -855,8 +859,6 @@ public class Tela extends javax.swing.JFrame {
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         //Retira todo o conteúdo da JTextArea3, o LOG
         jTextArea3.setText(null);
-        //Deixa o atributo responsável por armazenar o contúdo do LOG nula, para que valores novos não exibam os antigos
-        logcontent="";
     }//GEN-LAST:event_jButton15ActionPerformed
   
     //Botão para gerar 50 números aleatórios com latitude X e longitude Y dentro da Amazônia Legal
@@ -949,7 +951,9 @@ public class Tela extends javax.swing.JFrame {
         jTextArea3.setBackground(new Color(67, 68, 87));
         jTextArea3.setForeground(white);
         jTextField1.setBackground(new Color(67, 68, 87));
-        jTextField1.setForeground(white);   
+        jTextField1.setForeground(white);
+        //Pra controlar qual "modo" a tela de informações vai ser iniciada
+        modo = 1;
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     //Botão para colocar a U.I no Tema Padrão
@@ -1012,7 +1016,9 @@ public class Tela extends javax.swing.JFrame {
         jTextArea3.setBackground(new Color(255,255,255));
         jTextArea3.setForeground(black);
         jTextField1.setBackground(new Color(255,255,255));
-        jTextField1.setForeground(black);    
+        jTextField1.setForeground(black);  
+        //Pra controlar qual "modo" a tela de informações vai ser iniciada
+        modo = 0;
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     //Botão para exportar o conteúdo da JTextArea1
@@ -1031,6 +1037,7 @@ public class Tela extends javax.swing.JFrame {
     //Botão para exibir a tela de informações
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         //Cria e exibe a tela de informações 
+        info =null;
         if (info == null) {
             info = new Info(this);}
             info.setVisible(true);    
@@ -1101,11 +1108,8 @@ public class Tela extends javax.swing.JFrame {
     private void log(BenchMark bmm, String TypeofSort){
        logaux=("Ordenação realizada em: " +"[ " + new Date() + " |  "+TypeofSort+ "]\nArray com " + SET.length + 
        " localizações. Duração total: " + bmm.getElapsed() + " milissegundos.\n\n");
-       //Realiza a soma das strings. Não é o ideal, mas como o LOG geralmente não vai ter muito conteúdo, 
-       //é possível fazer assim
-       logcontent=logcontent+logaux;  
-       jTextArea3.setText(logcontent);
-       
+       //Realiza o append pra text area do LOG (Não foi de string builder Peter ahahahahah)
+       jTextArea3.append(logaux);  
     }
     
     //Método responsável pela escrita de conteúdo na JTextArea1, que tem como conteúdo o array desorganizado
@@ -1157,8 +1161,7 @@ public class Tela extends javax.swing.JFrame {
             exp.close();
             //Exibe no LOG onde o conteúdo foi salvo
             logaux=("Exportado com sucesso para: " + filename +"\n\n" );
-            logcontent=logcontent+logaux;  
-            jTextArea3.setText(logcontent);     
+            jTextArea3.append(logaux);
         } catch (IOException |NullPointerException ex) {
             //Caso o destino não for selecionado e a operação cancelada, exibe uma mensagem para
             //o usuário informando isso
@@ -1216,8 +1219,7 @@ public class Tela extends javax.swing.JFrame {
             if (result.length()>0){ 
             //Adiciona ao LOG o lugar de onde o arquivo foi importado
             logaux=(filename + " foi importado com sucesso!" + "\n\n" );
-            logcontent=logcontent+logaux;  
-            jTextArea3.setText(logcontent);
+            jTextArea3.append(logaux);
             //Retorna o array
             return spl;
             }
@@ -1290,8 +1292,7 @@ public class Tela extends javax.swing.JFrame {
       private void informe(int nn){
           //Mostra quantos números o array possui, e consequentemente quantos foram ordenados.
           logaux=( "Operação de geramento: "+nn + " localizações aleatórias geradas com êxito. \n\n");
-          logcontent=logcontent+logaux;  
-          jTextArea3.setText(logcontent);
+          jTextArea3.append(logaux);
       }
       
       //Método para checar se o array esta vazio antes de realizar a ordenação

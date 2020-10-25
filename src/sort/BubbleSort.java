@@ -5,10 +5,6 @@
  */
 package sort;
 
-/**
- *
- * @author Fernando Santello
- */
 import util.Util;
 
 //Classe que realiza o Bubble Sort

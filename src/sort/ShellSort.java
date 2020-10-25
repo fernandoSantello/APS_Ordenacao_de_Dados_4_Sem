@@ -5,11 +5,6 @@
  */
 package sort;
 
-/**
- *
- * @author Fernando Santello
- */
-
 //Classe que realiza o Shell Sort, que funciona surpeendentemente bem
 public class ShellSort {
 	public static void sort(long[] v) {

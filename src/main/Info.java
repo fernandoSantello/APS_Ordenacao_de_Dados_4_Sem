@@ -5,20 +5,45 @@
  */
 package main;
 
+import java.awt.Color;
+import static java.awt.Color.black;
+import static java.awt.Color.white;
+
 /**
  *
  * @author Fernando Santello
  */
 public class Info extends javax.swing.JFrame {
-
+    int modoInf = Tela.modo;
     private Tela daddy;
     /**
      * Creates new form JanelaSecundariaAtiva
      */
     //Pega o daddy dessa tela, para realizar a intercalação entre as duas
-    public Info(Tela daddy) {
+      public Info(Tela daddy) {
         initComponents();
+         
+        //Modo noturno está ativado na tela principal
+        if (modoInf == 1){
+        jPanel1.setBackground(new Color(20, 19, 19));
+        jLabel9.setForeground(white);
+        jLabel10.setForeground(white);
+        jTextArea1.setBackground(new Color(67, 68, 87));
+        jTextArea1.setForeground(white);
+         }
+        //Modo padrão ativado está ativado na tela principal 
+        else if (modoInf == 0) {
+        jPanel1.setBackground(new Color(255,204,102));
+        jLabel9.setForeground(black);
+        jLabel10.setForeground(black);
+        jTextArea1.setBackground(new Color(255,255,255));
+        jTextArea1.setForeground(black);
+        
+        };
         this.daddy = daddy;
+
+        
+         
     }
     /**
      * Creates new form JanelaSecundaria
@@ -52,7 +77,7 @@ public class Info extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("Olá, seja bem vindo ao novo programa do\nTeam Lovelace!\n\nEsse é um programa voltado para\na ordenação de dados numéricos,\ne os mesmo podem ser gerados\naleatoriamente pelo programa,\nou importados de arquivos de\ntexto. Note para que a importação\nde arquivos de texto, o arquivo\nprecisar estar em formato .TXT,\ne também conter apenas UM número\npor linha, além de não conter nada além\nde números!\n\nAs formas de ordenação são variadas,\ne estas são:\nBubble Sort, Insertion Sort,\nShell Sort ,Selection Sort, Heap Sort, \nMerge Sort e Quick Sort. Quando se trata de\num conjunto de poucos números, como 100 ou \n500, a diferença entre os métodos não é\ntão perceptível. Mas tratando de grandes \nconjuntos como 100.000 ou 1.000.000, a\ndiferença de tempo se torna mais explícita!\n\n----------------------------------------------------------\nTempo médio de geração de arquivos:\n\n10 localizações ----------- Menos de 1 segundo\n50 localizações ----------- Menos de 1 segundo\n100 localizações ---------- Menos de 1 segundo\n500 localizações ---------- Menos de 1 segundo\n1.000 localizações -------- Menos de 1 segundo\n5.000 localizações -------- Menos de 1 segundo\n10.000 localizações ------- Menos de 1 segundo\n100.000 localizações ------ Menos de 1 segundo\n1.000.000 localizações ----- 3 segundos\n-----------------------------------------------------------\nTempo médio de importação de arquivos:\n\n10 localizações ----------- 1 segundo\n50 localizações ----------- 1 segundo\n100 localizações ---------- 1 segundo\n500 localizações ---------- 1 segundos\n1.000 localizações -------- 1 segundos\n5.000 localizações -------- 1 segundos\n10.000 localizações ------- 2 segundos\n100.000 localizações ------ 20 segundos\n1.000.000 localizações ---- 20 minutos\n------------------------------------------------------------\nTodas as exportações são instantâneas!\n------------------------------------------------------------\nTempo médio de ordenação de arrays:\n\nNão tem como dizer um tempo específico, porque\na quantidade de elementos, a condição que este\narray está, e qual método se utiliza para ordenação\nsão fatores que tem influência gigantesca no tempo\nde ordenação.\nTeste o programa para descobrir as diferenças!\n--------------------------------------------------------------\nCaso deseje acessar o repositório deste projeto, basta\nclicar na opção\"Acessar repositório no GitHub\" no menu\n\"Projeto\"!\n-------------------------------------------------------------\nEsse programa está sob a licença GNU GENERAL \nPUBLIC LICENSE Version 3\n-------------------------------------------------------------\n");
+        jTextArea1.setText("Olá, seja bem vindo ao novo programa do\nTeam Lovelace!\n\nEsse é um programa voltado para\na ordenação de dados numéricos,\ne os mesmo podem ser gerados\naleatoriamente pelo programa,\nou importados de arquivos de\ntexto. Note para que a importação\nde arquivos de texto, o arquivo\nprecisar estar em formato .TXT,\ne também conter apenas UM número\npor linha, além de não conter nada além\nde números!\n\nAs formas de ordenação são variadas,\ne estas são:\nBubble Sort, Insertion Sort,\nShell Sort ,Selection Sort, Heap Sort, \nMerge Sort e Quick Sort. Quando se trata de\num conjunto de poucos números, como 100 ou \n500, a diferença entre os métodos não é\ntão perceptível. Mas tratando de grandes \nconjuntos como 100.000 ou 1.000.000, a\ndiferença de tempo se torna mais explícita!\n\n----------------------------------------------------------\nTempo médio de geração de arquivos:\n\n10 localizações ----------- Menos de 1 segundo\n50 localizações ----------- Menos de 1 segundo\n100 localizações ---------- Menos de 1 segundo\n500 localizações ---------- Menos de 1 segundo\n1.000 localizações -------- Menos de 1 segundo\n5.000 localizações -------- Menos de 1 segundo\n10.000 localizações ------- Menos de 1 segundo\n100.000 localizações ------ Menos de 1 segundo\n1.000.000 localizações ----- 3 segundos\n-----------------------------------------------------------\nTempo médio de importação de arquivos:\n\n10 localizações ----------- 1 segundo\n50 localizações ----------- 1 segundo\n100 localizações ---------- 1 segundo\n500 localizações ---------- 1 segundos\n1.000 localizações -------- 1 segundos\n5.000 localizações -------- 1 segundos\n10.000 localizações ------- 2 segundos\n100.000 localizações ------ 20 segundos\n1.000.000 localizações ---- 20 minutos\n------------------------------------------------------------\nTodas as exportações são instantâneas!\n------------------------------------------------------------\nTempo médio de ordenação de arrays:\n\nNão tem como dizer um tempo específico, porque\na quantidade de elementos, a condição que este\narray está, e qual método se utiliza para ordenação\nsão fatores que tem influência gigantesca no tempo\nde ordenação.\nTeste o programa para descobrir as diferenças!\n--------------------------------------------------------------\nCaso deseje acessar o repositório deste projeto, basta\nclicar na opção\"Acessar repositório no GitHub\" no menu\n\"Projeto\"!\n-------------------------------------------------------------\nEsse programa está sob a licença GNU GENERAL \nPUBLIC LICENSE Version 3.0\n-------------------------------------------------------------\n");
         jTextArea1.setBorder(null);
         jTextArea1.setCaretColor(new java.awt.Color(255, 204, 102));
         jTextArea1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
